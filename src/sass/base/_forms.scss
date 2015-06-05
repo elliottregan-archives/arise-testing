@@ -1,0 +1,130 @@
+fieldset {
+  background-color: $secondary-background-color;
+  border: $base-border;
+  margin: 0 0 $small-spacing;
+  padding: $base-spacing;
+}
+
+input,
+label,
+select {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  color: $brand-green;
+  font-family: $heading-font-family;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  margin-bottom: .5rem;
+
+  &.required::after {
+    content: "*";
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+#{$all-text-inputs},
+select[multiple=multiple],
+textarea {
+  background-color: tint($brand-green, 80%);
+  border: none;
+  color: $brand-green;
+  font-weight: 800;
+  box-sizing: border-box;
+  font-family: $heading-font-family;
+  text-transform: uppercase;
+  font-size: $base-font-size;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 3;
+  width: 100%;
+
+  &::-webkit-input-placeholder {
+     color: $brand-green;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: $brand-green;  
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: $brand-green;  
+  }
+
+  &:-ms-input-placeholder {  
+     color: $brand-green;  
+  }
+
+  &:hover {
+    background-color: tint($brand-green, 85%);
+
+  }
+
+  &:focus {
+    border-color: $action-color;
+    outline: 2px solid tint($brand-green, 20%);
+
+  }
+
+  &:disabled {
+    background-color: darken($base-background-color, 6%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="search"] {
+  @include appearance(none);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+input[type="file"] {
+  padding-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $base-spacing;
+  max-width: 100%;
+  width: auto;
+}
+
+.ui-input {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-transform: none;
+
+  @include media($medium-screen-up) {
+    max-width: 400px;
+  }
+}
+
+.ui-label {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 1em;
+  color: $brand-black;
+  @include media($medium-screen-up) {
+    max-width: 400px;
+  }
+}

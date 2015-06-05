@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    include _head.jade
+    script(src='js/app.js')
+    script(src='js/controllers.js')
+  body.homepage
+
+    header
+      include _header.jade
+    main(ng-app="mediaBrowser")
+      .content
+        h1 Media Browser
+
+      .content
+        .browser(ng-controller="mediaBrowserController")
+          .sort-column
+            .dropdown
+              .dropdown-label(ng-click="toggleFilterDropdown()" ng-bind="filterName")
+              ul.dropdown-options(ng-show="sortDropdownVisible")
+                li.dropdown-option(ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)")
+            ul
+              li.sort-item(ng-click="sortMedia()") Show All
+              li.sort-item(ng-repeat="category in filterCategories" ng-bind="category" ng-click="sortMedia(category)")
+          .media-column
+            input.search(ng-model="searchParameter" placeholder="search")
+            ul.media-list: li.media-item(ng-repeat="media in mediaLibrary | filter : search ")
+              .media-icon(ng-bind="media.mediaType")
+              h1.title(ng-bind="media.title")
+              h2.author(ng-bind="media.author")
+              p.description(ng-bind="media.description")
+    footer
+      include _footer.jade

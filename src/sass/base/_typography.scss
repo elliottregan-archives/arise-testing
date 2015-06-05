@@ -1,0 +1,144 @@
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  margin: 0 0 $small-spacing;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0 0 $small-spacing;
+  color: $brand-green;
+
+  font-size: 1em;
+  // text-transform: uppercase;
+
+}
+
+hgroup {
+
+  margin: 0 0 $small-spacing;
+
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .25rem;
+  }
+
+}
+
+h3 {
+  font-size: 2em;
+  margin: 0;
+  color: $brand-green;
+  text-transform: none;
+  @include media($medium-screen-up) {
+    font-size: 1.6em;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}
+
+h4 {
+
+  font-size: .9em;
+  color: grey;
+
+  @include media($medium-screen-up) {
+
+  }
+
+}
+
+h5 {
+  font-size: 1.4em;
+  margin: 0;
+  line-height: 1em;
+}
+
+h6 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+
+  &.description {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  &.body2 {
+    font-weight: 500;
+  }
+
+  &.body3 {
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+
+}
+
+a {
+  color: $brand-green;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.1s linear;
+  font-family: inherit;
+  
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($brand-green, 20%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  // max-width: 100%;
+}
+
+blockquote {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 2rem 4rem;
+  color: $brand-green;
+}

@@ -1,0 +1,84 @@
+#{$all-button-inputs},
+button {
+  @include appearance(none);
+  background-color: black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $heading-font-family;
+  font-size: .9em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 800;
+  line-height: 1;
+  padding: .75rem 1rem;
+  margin: .5rem 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: lighten(black, 10%); 
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+%download_btn {
+  @include appearance(none);
+  font-family: $heading-font-family;
+  font-size: .9em;
+  color: white;
+  line-height: 1.25em;
+  text-transform: uppercase;
+  padding: 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: black;
+  padding: .75rem 1rem;
+  text-align: left;
+  padding-left: 55px;
+  margin: 1rem 0;
+
+  @include media($medium-screen-up) {
+    width: 325px;
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  &::before {
+    content: '';
+    background-color: $brand-yellow;
+    background-image: url("../images/acrobat-logo.svg");
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.btn-pdf_dl {
+  @extend %download_btn;
+}
+
+.btn-dl {
+  @extend %download_btn;
+  &::before {
+    background-image: url("../images/download-arrow.svg");
+  }
+}
