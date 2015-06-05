@@ -40,7 +40,7 @@ $gutter: 30px;
   }
 }
 
-p {
+p.blog-text {
   @include media($medium-screen-up) {
     padding-left: flex-grid( 2 ) + flex-gutter();
     padding-right: flex-grid( 2 ) + flex-gutter();

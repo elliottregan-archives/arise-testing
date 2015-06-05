@@ -158,6 +158,8 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
     # ]
 
     $scope.sortDropdownVisible = false
+    $scope.mediaIsFiltered = false
+
 
     $scope.categoryFilter = undefined
     $scope.searchParameter = ''
@@ -171,8 +173,13 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         return true
       return false
 
-    $scope.sortMedia = (filterParameter) ->
+    $scope.backToFilter = () ->
+      $scope.mediaIsFiltered = false
+
+
+    $scope.filterMedia = (filterParameter) ->
       $scope.mediaFilter = filterParameter
+      $scope.mediaIsFiltered = true
 
     $scope.filterOptions = [
       {
@@ -188,6 +195,9 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         options: ["Audio", "Video", "Text"]
       }
     ]
+
+    $scope.filterCategories = $scope.filterOptions[1].options
+    $scope.filterName = $scope.filterOptions[1].name
 
     $scope.toggleFilterDropdown = (filterCategoryIndex) ->
       console.log $scope.filterOptions[filterCategoryIndex]

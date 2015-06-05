@@ -126,6 +126,7 @@ mediaBrowser.controller('mediaBrowserController', function($scope) {
       }
     ];
     $scope.sortDropdownVisible = false;
+    $scope.mediaIsFiltered = false;
     $scope.categoryFilter = void 0;
     $scope.searchParameter = '';
     $scope.categoryOptions = ['Parenting', 'Spiritual Growth', 'Emotional Wellness', 'Home Life', 'Finances'];
@@ -137,8 +138,12 @@ mediaBrowser.controller('mediaBrowserController', function($scope) {
       }
       return false;
     };
-    $scope.sortMedia = function(filterParameter) {
-      return $scope.mediaFilter = filterParameter;
+    $scope.backToFilter = function() {
+      return $scope.mediaIsFiltered = false;
+    };
+    $scope.filterMedia = function(filterParameter) {
+      $scope.mediaFilter = filterParameter;
+      return $scope.mediaIsFiltered = true;
     };
     $scope.filterOptions = [
       {
@@ -152,6 +157,8 @@ mediaBrowser.controller('mediaBrowserController', function($scope) {
         options: ["Audio", "Video", "Text"]
       }
     ];
+    $scope.filterCategories = $scope.filterOptions[1].options;
+    $scope.filterName = $scope.filterOptions[1].name;
     return $scope.toggleFilterDropdown = function(filterCategoryIndex) {
       console.log($scope.filterOptions[filterCategoryIndex]);
       $scope.sortDropdownVisible = !$scope.sortDropdownVisible;

@@ -8,6 +8,8 @@
     <script src="js/bower_components.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="//use.typekit.net/lcr7fcy.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body class="homepage">
     <header></header>
@@ -17,7 +19,7 @@
       </div>
       <div class="content">
         <div ng-controller="mediaBrowserController" class="browser">
-          <div class="sort-column">
+          <div ng-class="{isVisible: !mediaIsFiltered}" class="sort-column">
             <div class="dropdown">
               <div ng-click="toggleFilterDropdown()" ng-bind="filterName" class="dropdown-label"></div>
               <ul ng-show="sortDropdownVisible" class="dropdown-options">
@@ -25,13 +27,14 @@
               </ul>
             </div>
             <ul>
-              <li ng-click="sortMedia()" class="sort-item">Show All</li>
-              <li ng-repeat="category in filterCategories" ng-bind="category" ng-click="sortMedia(category)" class="sort-item"></li>
+              <li ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}" class="sort-item">Show All</li>
+              <li ng-repeat="category in filterCategories" ng-bind="category" ng-click="filterMedia(category)" ng-class="{selected: mediaFilter==category}" class="sort-item"></li>
             </ul>
           </div>
-          <div class="media-column">
+          <div ng-class="{isVisible: mediaIsFiltered}" class="media-column">
             <input ng-model="searchParameter" placeholder="search" class="search">
             <ul class="media-list">
+              <li ng-click="backToFilter()" class="media-item MOBILE-ONLY"><- back</li>
               <li ng-repeat="media in mediaLibrary | filter : search " class="media-item">
                 <div ng-bind="media.mediaType" class="media-icon"></div>
                 <h1 ng-bind="media.title" class="title"></h1>

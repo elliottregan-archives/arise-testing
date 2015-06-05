@@ -1,6 +1,7 @@
 .browser {
   height: 500px;
   position: relative;
+  overflow: hidden;
   > * {
     position: absolute;
     height: 100%;
@@ -23,22 +24,52 @@
 }
 
 %column-header {
-  height: 50px;
+  height: 70px;
 }
 
+.MOBILE-ONLY {
+  @include media($medium-screen) {
+    display: none;
+  }
+}
+
+
 .sort-column {
-  width: 200px;
   z-index: 10;
+  width: 100%;
   overflow: visible;
+  background-color: #fff;
+
+  @include media($medium-screen) {
+    width: 200px;
+  }
 
   .sort-item {
     @extend %browser-list-item;
+
+    &.selected {
+      background-color: lightgrey;
+    }
   }
 }
 
 .media-column {
-  padding-left: 200px;
-  width: 100%;
+
+  background-color: #fff;
+  z-index: 10;
+  @include transform( translateX(100%) );
+  @include transition ( all 500ms ease-in-out );
+
+  &.isVisible {
+    @include transform( translateX(0) );
+  }
+
+  @include media($medium-screen) {
+    @include transform( translateX(0) );
+    padding-left: 200px;
+    width: 100%;
+    z-index: 0;
+  }
 
   .media-item {
     @extend %browser-list-item;
@@ -97,7 +128,7 @@
     &::before {
       content: "choose filter:";
       font-size: .9em;
-      line-height: .8em;
+      line-height: 1.8em;
       display: block;
       color: grey;
     }

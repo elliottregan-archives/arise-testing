@@ -15,7 +15,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], button 
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   font-size: .9em;
   -webkit-font-smoothing: antialiased;
   font-weight: 800;
@@ -40,7 +40,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], button 
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   font-size: .9em;
   color: white;
   line-height: 1.25em;
@@ -84,14 +84,14 @@ fieldset {
 
 input, label, select {
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "proxima-nova", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em; }
 
 label {
   font-weight: 600;
   margin-bottom: 0.375em;
   color: #005542;
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
   font-size: 1.4em;
   margin-bottom: .5rem; }
@@ -106,7 +106,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   color: #005542;
   font-weight: 800;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
   font-size: 1em;
   margin-bottom: 0.75em;
@@ -234,12 +234,12 @@ body {
   -ms-font-feature-settings: "kern", "liga", "pnum";
   font-feature-settings: "kern", "liga", "pnum";
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "proxima-nova", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 1em;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   margin: 0 0 0.75em;
   text-transform: uppercase; }
 
@@ -328,7 +328,8 @@ body {
 
 .browser {
   height: 500px;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .browser > * {
     position: absolute;
     height: 100%; }
@@ -344,16 +345,50 @@ body {
     border: 1px solid whitesmoke; }
 
 .search, .dropdown .dropdown-label {
-  height: 50px; }
+  height: 70px; }
+
+@media screen and (min-width: 40rem) {
+  .MOBILE-ONLY {
+    display: none; } }
 
 .sort-column {
-  width: 200px;
   z-index: 10;
-  overflow: visible; }
+  width: 100%;
+  overflow: visible;
+  background-color: #fff; }
+  @media screen and (min-width: 40rem) {
+    .sort-column {
+      width: 200px; } }
+  .sort-column .sort-item.selected {
+    background-color: lightgrey; }
 
 .media-column {
-  padding-left: 200px;
-  width: 100%; }
+  background-color: #fff;
+  z-index: 10;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out; }
+  .media-column.isVisible {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); }
+  @media screen and (min-width: 40rem) {
+    .media-column {
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+      transform: translateX(0);
+      padding-left: 200px;
+      width: 100%;
+      z-index: 0; } }
   .media-column .title {
     font-size: 1em;
     margin: 0; }
@@ -393,7 +428,7 @@ body {
     .dropdown .dropdown-label::before {
       content: "choose filter:";
       font-size: .9em;
-      line-height: .8em;
+      line-height: 1.8em;
       display: block;
       color: grey; }
   .dropdown .dropdown-options {
@@ -439,6 +474,6 @@ body {
         margin-left: 1rem; } }
 
 @media screen and (min-width: 40rem)  {
-  p {
+  p.blog-text {
     padding-left: 17.02128%;
     padding-right: 17.02128%; } }
