@@ -28,7 +28,7 @@
     "koa-views": "^2.1.2",
     "node-neat": "^1.7.1-beta1",
     "node-sass": "^2.1.1",
-    "sass-bourbon": "^4.1.1"
+    "bourbon": "^4.2.3"
   },
   "scripts": {
     "start": "gulp dev",
