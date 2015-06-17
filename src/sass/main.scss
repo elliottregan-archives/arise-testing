@@ -7,6 +7,7 @@ $gutter: 30px;
 @import 'media-browser';
 @import 'blog';
 @import 'homepage';
+@import 'footer';
 
 .content-container {
   padding: 2rem 0;
@@ -19,6 +20,18 @@ $gutter: 30px;
   &.gradient-blue {
     @include background-image(linear-gradient( tint($brand-blue, 50%), $brand-blue ));
     color: white;
+  }
+
+  &.solid-blue {
+    background-color: $brand-blue;
+  }
+}
+
+.photo_divider {
+  height: 200px;
+
+  &.trees {
+    background-image: url("../images/trees.jpg");
   }
 }
 

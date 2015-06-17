@@ -1,0 +1,25 @@
+.footer-header {
+  color: white;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.footer_links {
+
+  a {
+    color: darken($brand-blue, 15%);
+    font-size: .8em;
+
+    &:hover {
+      color: darken($brand-blue, 25%);
+
+    }
+  }
+}
+
+.footer_column {
+  @include media($medium-screen-up) {
+    @include span-columns( 3 );
+  }
+}
