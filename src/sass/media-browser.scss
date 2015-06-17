@@ -24,7 +24,7 @@
 }
 
 %column-header {
-  height: 70px;
+  // height: 70px;
 }
 
 .MOBILE-ONLY {
@@ -33,8 +33,17 @@
   }
 }
 
+.column-header {
+  background-color: $brand-grey;
+  color: white;
+  margin: 0;
+  font-weight: 800;
+  padding: .5rem;
+  text-align: center;
+  border: 1px solid white;
+}
 
-.sort-column {
+.filter-column {
   z-index: 10;
   width: 100%;
   overflow: visible;
@@ -44,11 +53,20 @@
     width: 200px;
   }
 
-  .sort-item {
+  .filter-item {
     @extend %browser-list-item;
-
+    padding: .75rem;
+    font-size: .9em;
+    font-weight: 600;
+    color: $brand-yellow;
+    background-color: tint($brand-yellow, 85%);
+    
+    &:hover {
+      background-color: darken(tint($brand-yellow, 85%), 5%);
+    }
     &.selected {
-      background-color: lightgrey;
+      background-color: $brand-yellow;
+      color: white;
     }
   }
 }
@@ -78,11 +96,15 @@
   .title {
     font-size: 1em;
     margin: 0;
+    font-weight: 600;
+    color: lighten($brand-grey, 20%);
+    text-transform: capitalize;
   }
 
   .author {
     font-size: .9em;
-    color: lighten(black, 50%);
+    margin: 0;
+    color: $brand-blue;
     font-style: italic;
     text-transform: none;
     font-weight: 400;
@@ -100,18 +122,26 @@
 }
 
 .media-icon {
-  float: left;
-  background-color: lightgrey;
+  float: right;
   width: 40px;
   height: 40px;
   margin-bottom: 50px;
   margin-right: 1rem;
   overflow: hidden;
+
+  &.Audio {
+    background-image: url(/images/audio.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .search {
   padding: 1rem;
   border: none;
+  background-color: lighten($brand-grey, 60%);
+  border: 1px solid white;
+  width: 100%;
   @extend %column-header;
 }
 
@@ -120,10 +150,11 @@
 
   .dropdown-label {
     @extend %column-header;
-
+    background-color: lighten($brand-grey, 60%);
+    border: 1px solid white;
     cursor: pointer;
-    padding: 1rem;
-    line-height: .5em;
+    padding: .5rem 1rem 1rem;
+    line-height: .25em;
 
     &::before {
       content: "choose filter:";

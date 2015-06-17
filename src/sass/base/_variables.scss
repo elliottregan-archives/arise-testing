@@ -1,6 +1,6 @@
 // Typography
-$base-font-family: "proxima-nova", Helvetica, Arial, "Lucida Grande", sans-serif;
-$heading-font-family: "proxima-nova", sans-serif;
+$base-font-family: "Lato", "lato", Helvetica, sans-serif;
+$heading-font-family: "Source Sans Pro", "source-sans-pro", sans-serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -12,13 +12,13 @@ $heading-line-height: 1.2;
 // Other Sizes
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
+$small-spacing: $base-spacing / 4;
 $base-z-index: 0;
 
 // Brand Colors
-$brand-green: #005542;
-$brand-yellow: #ffa723;
-$brand-black: #2b2b2b;
+$brand-blue: #0094c3;
+$brand-yellow: #ff9a00;
+$brand-grey: #565655;
 
 // General Colors
 $blue: #477dca;

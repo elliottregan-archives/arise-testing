@@ -19,24 +19,26 @@
       </div>
       <div class="content">
         <div ng-controller="mediaBrowserController" class="browser">
-          <div ng-class="{isVisible: !mediaIsFiltered}" class="sort-column">
+          <div ng-class="{isVisible: !mediaIsFiltered}" class="filter-column">
+            <h4 class="column-header">Category</h4>
             <div class="dropdown">
               <div ng-click="toggleFilterDropdown()" ng-bind="filterName" class="dropdown-label"></div>
               <ul ng-show="sortDropdownVisible" class="dropdown-options">
                 <li ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)" class="dropdown-option"></li>
               </ul>
             </div>
-            <ul>
-              <li ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}" class="sort-item">Show All</li>
-              <li ng-repeat="category in filterCategories" ng-bind="category" ng-click="filterMedia(category)" ng-class="{selected: mediaFilter==category}" class="sort-item"></li>
+            <ul class="filter-list">
+              <li ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}" class="filter-item">Show All</li>
+              <li ng-repeat="category in filterCategories" ng-bind="category" ng-click="filterMedia(category)" ng-class="{selected: mediaFilter==category}" class="filter-item"></li>
             </ul>
           </div>
           <div ng-class="{isVisible: mediaIsFiltered}" class="media-column">
+            <h4 class="column-header">Resource</h4>
             <input ng-model="searchParameter" placeholder="search" class="search">
             <ul class="media-list">
               <li ng-click="backToFilter()" class="media-item MOBILE-ONLY"><- back</li>
               <li ng-repeat="media in mediaLibrary | filter : search " class="media-item">
-                <div ng-bind="media.mediaType" class="media-icon"></div>
+                <div class="media-icon {{media.mediaType}}"></div>
                 <h1 ng-bind="media.title" class="title"></h1>
                 <h2 ng-bind="media.author" class="author"></h2>
                 <p ng-bind="media.description" class="description"></p>

@@ -14,7 +14,16 @@ h5,
 h6 {
   font-family: $heading-font-family;
   margin: 0 0 $small-spacing;
-  text-transform: uppercase;
+}
+
+hgroup {
+
+  margin: 0 0 $small-spacing;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .25rem;
+  }
+
 }
 
 h1 {
@@ -25,33 +34,14 @@ h1 {
 
 h2 {
   font-size: 2em;
-  margin: 0 0 $small-spacing;
-  color: $brand-green;
-
-  font-size: 1em;
-  // text-transform: uppercase;
-
-}
-
-hgroup {
-
-  margin: 0 0 $small-spacing;
-
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: .25rem;
-  }
+  font-weight: 400;
+  font-size: 1.5em;
+  text-transform: uppercase;
 
 }
 
 h3 {
   font-size: 2em;
-  margin: 0;
-  color: $brand-green;
-  text-transform: none;
-  @include media($medium-screen-up) {
-    font-size: 1.6em;
-  }
 
   &.centered {
     text-align: center;
@@ -60,12 +50,7 @@ h3 {
 
 h4 {
 
-  font-size: .9em;
-  color: grey;
 
-  @include media($medium-screen-up) {
-
-  }
 
 }
 
@@ -83,20 +68,6 @@ h6 {
 p {
   margin: 0 0 $small-spacing;
 
-  &.description {
-    font-size: 1.2em;
-    font-weight: 600;
-  }
-
-  &.body2 {
-    font-weight: 500;
-  }
-
-  &.body3 {
-    font-weight: 600;
-    font-size: 1.1em;
-  }
-
   &.centered {
     text-align: center;
   }
@@ -104,7 +75,7 @@ p {
 }
 
 a {
-  color: $brand-green;
+  color: $brand-blue;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.1s linear;
@@ -113,7 +84,7 @@ a {
   &:active,
   &:focus,
   &:hover {
-    color: darken($brand-green, 20%);
+    color: darken($brand-blue, 20%);
   }
 
   &:active,
@@ -140,5 +111,5 @@ blockquote {
   font-size: 1.2em;
   font-weight: 600;
   margin: 2rem 4rem;
-  color: $brand-green;
+  color: $brand-blue;
 }

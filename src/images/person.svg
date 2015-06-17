@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="17px" viewBox="0 0 12 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="styles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Styles" sketch:type="MSArtboardGroup" transform="translate(-626.000000, -2455.000000)" fill="#FA9D1B">
+            <path d="M637,2460 C637,2458.619 636.44,2457.369 635.536,2456.465 C634.631,2455.56 633.381,2455 632,2455 C630.619,2455 629.369,2455.56 628.464,2456.465 C627.56,2457.369 627,2458.619 627,2460 C627,2461.381 627.56,2462.631 628.464,2463.535 C629.369,2464.44 630.619,2465 632,2465 C633.381,2465 634.631,2464.44 635.536,2463.535 C636.44,2462.631 637,2461.381 637,2460 L637,2460 Z M626,2470 C626,2471 628.25,2472 632,2472 C635.518,2472 638,2471 638,2470 C638,2468 635.646,2466 632,2466 C628.25,2466 626,2468 626,2470 L626,2470 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

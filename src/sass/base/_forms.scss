@@ -16,7 +16,7 @@ select {
 label {
   font-weight: 600;
   margin-bottom: $small-spacing / 2;
-  color: $brand-green;
+  color: $brand-blue;
   font-family: $heading-font-family;
   text-transform: uppercase;
   font-size: 1.4em;
@@ -34,9 +34,9 @@ label {
 #{$all-text-inputs},
 select[multiple=multiple],
 textarea {
-  background-color: tint($brand-green, 80%);
+  background-color: tint($brand-blue, 80%);
   border: none;
-  color: $brand-green;
+  color: $brand-blue;
   font-weight: 800;
   box-sizing: border-box;
   font-family: $heading-font-family;
@@ -47,29 +47,29 @@ textarea {
   width: 100%;
 
   &::-webkit-input-placeholder {
-     color: $brand-green;
+     color: $brand-blue;
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-     color: $brand-green;  
+     color: $brand-blue;  
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-     color: $brand-green;  
+     color: $brand-blue;  
   }
 
   &:-ms-input-placeholder {  
-     color: $brand-green;  
+     color: $brand-blue;  
   }
 
   &:hover {
-    background-color: tint($brand-green, 85%);
+    background-color: tint($brand-blue, 85%);
 
   }
 
   &:focus {
     border-color: $action-color;
-    outline: 2px solid tint($brand-green, 20%);
+    outline: 2px solid tint($brand-blue, 20%);
 
   }
 
@@ -123,7 +123,7 @@ select {
   margin: 0;
   padding-bottom: 0;
   font-size: 1em;
-  color: $brand-black;
+  color: $brand-grey;
   @include media($medium-screen-up) {
     max-width: 400px;
   }

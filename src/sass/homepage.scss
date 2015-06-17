@@ -1,0 +1,65 @@
+
+.hero-content {
+  position: relative;
+  min-height: 600px;
+
+  .tagline {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2em;
+    width: 30%;
+    text-align: right;
+    font-family: serif;
+  }
+}
+
+
+.card_layout {
+  padding: 1rem 0;
+}
+
+.card {
+  background-color: white;
+  margin: 1rem;
+  box-shadow: 0 4px 8px transparentize(#000, .75);
+  $card-padding: 2rem;
+
+  @include media($medium-screen-up) {
+    margin: auto;
+    @include span-columns( 4 );
+
+  }
+
+  .card-title {
+    color: $brand-grey;
+    font-size: 1.2em;
+    padding: $card-padding $card-padding 0;
+    line-height: 1.25;
+  }
+
+  .card-text {
+    padding: 0 $card-padding;
+    color: lighten($brand-grey, 20%);
+    font-size: .9em;
+  }
+
+  .card-image {
+    height: 200px;
+    background-color: lighten(black, 10%);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .read_more {
+    color: $brand-yellow;
+    text-align: right;
+    display: block;
+    font-weight: 400;
+    padding: 0 $card-padding $card-padding;
+  }
+}

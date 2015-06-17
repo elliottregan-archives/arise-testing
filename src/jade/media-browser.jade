@@ -16,20 +16,22 @@ html
 
       .content
         .browser(ng-controller="mediaBrowserController")
-          .sort-column(ng-class="{isVisible: !mediaIsFiltered}")
+          .filter-column(ng-class="{isVisible: !mediaIsFiltered}")
+            h4.column-header Category
             .dropdown
               .dropdown-label(ng-click="toggleFilterDropdown()" ng-bind="filterName")
               ul.dropdown-options(ng-show="sortDropdownVisible")
                 li.dropdown-option(ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)")
-            ul
-              li.sort-item(ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}") Show All
-              li.sort-item(ng-repeat="category in filterCategories" ng-bind="category" ng-click="filterMedia(category)" ng-class="{selected: mediaFilter==category}")
+            ul.filter-list
+              li.filter-item(ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}") Show All
+              li.filter-item(ng-repeat="category in filterCategories" ng-bind="category" ng-click="filterMedia(category)" ng-class="{selected: mediaFilter==category}")
           .media-column(ng-class="{isVisible: mediaIsFiltered}")
+            h4.column-header Resource
             input.search(ng-model="searchParameter" placeholder="search")
             ul.media-list
               li.media-item.MOBILE-ONLY(ng-click="backToFilter()") <- back
               li.media-item(ng-repeat="media in mediaLibrary | filter : search ")
-                .media-icon(ng-bind="media.mediaType")
+                .media-icon(class="{{media.mediaType}}")
                 h1.title(ng-bind="media.title")
                 h2.author(ng-bind="media.author")
                 p.description(ng-bind="media.description")
