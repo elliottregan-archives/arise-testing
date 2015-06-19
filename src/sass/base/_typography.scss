@@ -27,8 +27,8 @@ hgroup {
 }
 
 h1 {
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 700;
   line-height: 1em;
 }
 
@@ -37,7 +37,7 @@ h2 {
   font-weight: 400;
   font-size: 1.5em;
   text-transform: uppercase;
-
+  color: $brand-blue;
 }
 
 h3 {
@@ -67,6 +67,7 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
+  font-weight: 300;
 
   &.centered {
     text-align: center;

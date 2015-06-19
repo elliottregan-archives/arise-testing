@@ -85,7 +85,7 @@ fieldset {
 input, label, select {
   display: block;
   font-family: "Lato", "lato", Helvetica, sans-serif;
-  font-size: 1em; }
+  font-size: 0.9em; }
 
 label {
   font-weight: 600;
@@ -108,7 +108,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   box-sizing: border-box;
   font-family: "Source Sans Pro", "source-sans-pro", sans-serif;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 0.9em;
   margin-bottom: 0.75em;
   padding: 0.5em;
   width: 100%; }
@@ -235,7 +235,7 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   color: #333;
   font-family: "Lato", "lato", Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -248,15 +248,16 @@ hgroup {
     margin-bottom: .25rem; }
 
 h1 {
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 700;
   line-height: 1em; }
 
 h2 {
   font-size: 2em;
   font-weight: 400;
   font-size: 1.5em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #0094c3; }
 
 h3 {
   font-size: 2em; }
@@ -273,7 +274,8 @@ h6 {
   margin: 0; }
 
 p {
-  margin: 0 0 0.375em; }
+  margin: 0 0 0.375em;
+  font-weight: 300; }
   p.centered {
     text-align: center; }
 
@@ -449,8 +451,22 @@ body {
     border-bottom: 1px solid whitesmoke;
     padding: 1rem; }
 
+p.intro-text {
+  font-size: .9em;
+  font-weight: 400;
+  color: #565655;
+  font-style: italic;
+  line-height: 1.5rem;
+  float: left;
+  display: block;
+  margin-right: 2.12766%;
+  width: 65.95745%;
+  margin-left: 17.02128%; }
+  p.intro-text:last-child {
+    margin-right: 0; }
+
 @media screen and (min-width: 40rem)  {
-  p.blog-text {
+  .blog-text {
     padding-left: 17.02128%;
     padding-right: 17.02128%; } }
 
@@ -458,13 +474,20 @@ body {
   width: 100%; }
   @media screen and (min-width: 40rem)  {
     .image_divider {
-      width: auto; }
+      margin: 1rem 0;
+      float: left;
+      display: block;
+      margin-right: 2.12766%;
+      width: 65.95745%;
+      margin-left: 17.02128%; }
+      .image_divider:last-child {
+        margin-right: 0; }
       .image_divider.left {
         float: left;
-        margin: 0 1rem 0 0; }
+        margin: .5rem 1rem .5rem 0; }
       .image_divider.right {
         float: right;
-        margin-left: 1rem; }
+        margin: .5rem 0 .5rem 1rem; }
       .image_divider.full_width {
         margin: 1rem 0;
         float: left;
@@ -572,6 +595,9 @@ body {
 
 .submenu {
   display: none; }
+
+main {
+  margin-top: 4rem; }
 
 .content-container {
   padding: 2rem 0; }

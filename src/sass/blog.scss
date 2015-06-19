@@ -1,5 +1,15 @@
+p.intro-text {
+  font-size: .9em;
+  font-weight: 400;
+  color: $brand-grey;
+  font-style: italic;
+  line-height: 1.5rem;
 
-p.blog-text {
+  @include span-columns( 8 );
+  @include shift(2);
+}
+
+.blog-text {
   @include media($medium-screen-up) {
     padding-left: flex-grid( 2 ) + flex-gutter();
     padding-right: flex-grid( 2 ) + flex-gutter();
@@ -12,16 +22,19 @@ p.blog-text {
 
   @include media($medium-screen-up) {
     
-    width: auto;
-
+    margin: 1rem 0;
+    
+    @include span-columns( 8 );
+    @include shift(2);
+    
     &.left {
       float: left;
-      margin: 0 1rem 0 0;
+      margin: .5rem 1rem .5rem 0;
     }
 
     &.right {
       float: right;
-      margin-left: 1rem;
+      margin: .5rem 0 .5rem 1rem;
     }
 
     &.full_width {
