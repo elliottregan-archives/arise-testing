@@ -449,10 +449,36 @@ body {
     border-bottom: 1px solid whitesmoke;
     padding: 1rem; }
 
-.hero-content {
+@media screen and (min-width: 40rem)  {
+  p.blog-text {
+    padding-left: 17.02128%;
+    padding-right: 17.02128%; } }
+
+.image_divider {
+  width: 100%; }
+  @media screen and (min-width: 40rem)  {
+    .image_divider {
+      width: auto; }
+      .image_divider.left {
+        float: left;
+        margin: 0 1rem 0 0; }
+      .image_divider.right {
+        float: right;
+        margin-left: 1rem; }
+      .image_divider.full_width {
+        margin: 1rem 0;
+        float: left;
+        display: block;
+        margin-right: 2.12766%;
+        width: 100%; }
+        .image_divider.full_width:last-child {
+          margin-right: 0; } }
+
+.content.hero-content {
   position: relative;
+  padding-top: 6rem;
   min-height: 600px; }
-  .hero-content .tagline {
+  .content.hero-content .tagline {
     color: white;
     position: absolute;
     bottom: 0;
@@ -521,11 +547,40 @@ body {
     .footer_column:last-child {
       margin-right: 0; } }
 
+.nav-container {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 100%;
+  z-index: 100; }
+
+.header_nav {
+  position: relative;
+  border-bottom: 2px solid white; }
+
+.header_links, .social_links {
+  display: inline-block; }
+  .header_links li, .social_links li {
+    display: inline-block; }
+    .header_links li a, .social_links li a {
+      color: #70706e;
+      text-transform: uppercase;
+      font-size: .9em;
+      padding: 1rem; }
+      .header_links li a:hover, .social_links li a:hover {
+        color: #3c3c3c; }
+
+.submenu {
+  display: none; }
+
 .content-container {
   padding: 2rem 0; }
   .content-container.hero_image-sunset_girl {
+    background-color: #eaeaea;
     background-image: url("../images/sunset-girl.jpg");
-    background-position: bottom; }
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat; }
   .content-container.gradient-blue {
     background-image: -webkit-linear-gradient(#7fc9e1, #0094c3);
     background-image: linear-gradient(#7fc9e1, #0094c3);
@@ -557,23 +612,6 @@ body {
     margin-left: 17.02128%; }
     .text_container:last-child {
       margin-right: 0; } }
-
-.image_divider {
-  width: 100%; }
-  @media screen and (min-width: 40rem)  {
-    .image_divider {
-      width: auto; }
-      .image_divider.left {
-        float: left;
-        margin: 0 1rem 0 0; }
-      .image_divider.right {
-        float: right;
-        margin-left: 1rem; } }
-
-@media screen and (min-width: 40rem)  {
-  p.blog-text {
-    padding-left: 17.02128%;
-    padding-right: 17.02128%; } }
 
 .block_quote {
   color: #ff9a00;

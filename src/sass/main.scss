@@ -8,13 +8,17 @@ $gutter: 30px;
 @import 'blog';
 @import 'homepage';
 @import 'footer';
+@import 'header';
 
 .content-container {
   padding: 2rem 0;
 
   &.hero_image-sunset_girl {
+    background-color: #eaeaea;
     background-image: url("../images/sunset-girl.jpg");
     background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
   &.gradient-blue {
@@ -47,33 +51,7 @@ $gutter: 30px;
   }
 }
 
-.image_divider {
-  
-  width: 100%;
 
-  @include media($medium-screen-up) {
-    
-    width: auto;
-
-    &.left {
-      float: left;
-      margin: 0 1rem 0 0;
-    }
-
-    &.right {
-      float: right;
-      margin-left: 1rem;
-    }
-
-  }
-}
-
-p.blog-text {
-  @include media($medium-screen-up) {
-    padding-left: flex-grid( 2 ) + flex-gutter();
-    padding-right: flex-grid( 2 ) + flex-gutter();
-  }
-}
 
 $blockquote_border: 1px solid $brand-yellow;
 

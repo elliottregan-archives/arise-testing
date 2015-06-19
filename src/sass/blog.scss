@@ -1,0 +1,33 @@
+
+p.blog-text {
+  @include media($medium-screen-up) {
+    padding-left: flex-grid( 2 ) + flex-gutter();
+    padding-right: flex-grid( 2 ) + flex-gutter();
+  }
+}
+
+.image_divider {
+  
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    
+    width: auto;
+
+    &.left {
+      float: left;
+      margin: 0 1rem 0 0;
+    }
+
+    &.right {
+      float: right;
+      margin-left: 1rem;
+    }
+
+    &.full_width {
+      margin: 1rem 0;
+      @include span-columns( 12 );
+    }
+
+  }
+}

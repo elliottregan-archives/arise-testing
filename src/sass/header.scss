@@ -1,0 +1,38 @@
+.nav-container {
+  position: absolute;
+  left: 0;
+
+  top: 1rem;
+  width: 100%;
+  z-index: 100;
+  // background-color: red;
+}
+
+.header_nav {
+  position: relative;
+  border-bottom: 2px solid white;
+}
+
+.header_links, .social_links {
+  
+  display: inline-block;
+
+  li {
+    display: inline-block;
+
+    a {
+      color: lighten($brand-grey, 10%);
+      text-transform: uppercase;
+      font-size: .9em;
+      padding: 1rem;
+
+      &:hover {
+        color: darken($brand-grey, 10%);
+      }
+    }
+  }
+}
+
+.submenu {
+  display: none;
+}
