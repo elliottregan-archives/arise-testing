@@ -33,6 +33,19 @@
 
   }
 
+  &.horizontal {
+    @include media($medium-screen-up) {
+      margin: 1rem auto;
+      @include span-columns( 12 );
+
+      .card-image {
+        width: 150px;
+        margin-right: 1rem;
+        float: left;
+      }
+    }
+  }
+
   .card-title {
     color: $brand-grey;
     font-size: 1.2em;
