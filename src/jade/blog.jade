@@ -10,16 +10,68 @@ html
     main
       .content-container
         .content
-          hgroup.text_container
-            h1 Heading level 1
-          p.intro-text Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia. Cras et dui mollis, tempus velit placerat, sodales tellus. 
-          img.image_divider(src="http://stevensegallery.com/650/400")
-          h2.blog-text Subheading
-          p.blog-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et venenatis sapien. Maecenas sem diam, lacinia in ipsum et, fermentum rutrum lacus. ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.
-          img.image_divider.left(src="http://stevensegallery.com/550/250")
-          p.blog-text Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia. Cras et dui mollis, tempus velit placerat, sodales tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et venenatis sapien. Maecenas sem diam, lacinia in ipsum et, fermentum rutrum lacus. ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.
-          img.image_divider.right(src="http://stevensegallery.com/650/250")
-          p.blog-text Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia. Cras et dui mollis, tempus velit placerat, sodales tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et venenatis sapien. Maecenas sem diam, lacinia in ipsum et, fermentum rutrum lacus. ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.
-          img.image_divider.full_width(src="http://stevensegallery.com/960/350")
+          article.blog-content
+            img.hero_image(src="http://stevensegallery.com/650/400")
+            hgroup.post-title-group
+              h1 Heading level 1
+              .post-meta 
+                | Posted
+                time(datetime="2008-02-14 20:00") June 9, 2015
+                |  by Shelley Pulliam
+            p.intro-text Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia. Cras et dui mollis, tempus velit placerat, sodales tellus. 
+            h2 Subheading
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et venenatis sapien. Maecenas sem diam, lacinia in ipsum et, fermentum rutrum lacus. ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.
+            img.image_divider.left(src="http://stevensegallery.com/550/250")
+            p Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia. Cras et dui mollis, tempus velit placerat, sodales tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque et venenatis sapien. Maecenas sem diam, lacinia in ipsum et, fermentum rutrum lacus. ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui. Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis.
+            img.image_divider.full_width(src="http://stevensegallery.com/960/350")
+          nav.blog-sidebar
+            h4 Recent
+            ul
+              li: a(href="#") Title of Another Blog Post
+              li: a(href="#") Title of Another Blog Post
+              li: a(href="#") Title of Another Blog Post
+            h4 Categories
+            ul
+              li: a(href="#") Category 1
+              li: a(href="#") Category 2
+              li: a(href="#") Category 3
+              li: a(href="#") Category 4
+      .content-container
+        footer.content.post-footer
+          .share_links
+            h4 Share
+            ul
+              li mail
+              li tw
+              li pin
+              li f
+          hr
+          .author-blurb
+            img.author-pic(src="http://stevensegallery.com/100/100")
+            .author-blurb-text
+              h3.author-name About Shelley Pulliam
+              p.intro-text Quisque venenatis orci nec nisl bibendum, id pharetra turpis vulputate. Etiam placerat elit vel iaculis eleifend. Sed sit amet arcu a quam commodo pharetra eget eget elit. Cras dignissim accumsan tellus, sit amet vulputate orci porttitor non.
+      .content-container.solid-grey
+        section.content
+          h3 Recent Posts
+          .card_layout
+            .card
+              .card-image
+                img(src="http://stevensegallery.com/300/220")
+              h3.card-title Proin ornare luctus massa, id hendrerit tellus auctor
+              p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+              a.read_more Read More
+            .card
+              .card-image
+                img(src="http://stevensegallery.com/400/300")
+              h3.card-title Proin ornare luctus massa, id hendrerit tellus auctor
+              p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+              a.read_more Read More
+            .card
+              .card-image
+                img(src="http://stevensegallery.com/600/450")
+              h3.card-title Proin ornare luctus massa, id hendrerit tellus auctor
+              p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+              a.read_more Read More
     footer
       include _footer.jade

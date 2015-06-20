@@ -4,9 +4,7 @@ p.intro-text {
   color: $brand-grey;
   font-style: italic;
   line-height: 1.5rem;
-
-  @include span-columns( 8 );
-  @include shift(2);
+  margin-bottom: 1rem;
 }
 
 .blog-text {
@@ -16,16 +14,109 @@ p.intro-text {
   }
 }
 
+.post-title-group {
+  margin-bottom: 1rem;
+
+  .post-meta {
+    font-size: .8em;
+    font-style: italic;
+    color: lighten($brand-grey, 20%);
+  }
+}
+
+.blog-content {
+  @include span-columns( 8 );
+}
+
+
+.post-footer {
+
+  h4 {
+    color: $brand-blue;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-right: 2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 4px;
+      background-color: $brand-yellow;
+      height: 2em;
+      top: -.25em;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .share_links {
+    margin: 1rem 0;
+    
+    li, ul {
+      display: inline-block;
+    }
+
+  }
+
+  .author-blurb {
+    
+    .author-pic {
+      float: left;
+    }
+
+    .author-blurb-text {
+      padding-left: 120px;
+    }
+
+    .author-name {
+      font-size: 1.4em;
+      margin-bottom: .5rem;
+    }
+  }
+
+}
+
+
+.blog-sidebar {
+  float: right;
+  @include span-columns( 4 );
+  background-color: lighten($brand-grey, 60%);
+  padding: 1rem;
+  border-radius: 10px;
+
+  h4 {
+    margin-bottom: .5rem;
+
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+
+  a {
+    color: lighten($brand-grey, 20%);
+    padding: .5rem;
+    &:hover {
+      color: $brand-blue;
+    }
+  }
+}
+
+.hero_image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .image_divider {
   
   width: 100%;
-
   @include media($medium-screen-up) {
     
     margin: 1rem 0;
     
-    @include span-columns( 8 );
-    @include shift(2);
+    // @include span-columns( 8 );
+    // @include shift(2);
     
     &.left {
       float: left;
@@ -39,7 +130,7 @@ p.intro-text {
 
     &.full_width {
       margin: 1rem 0;
-      @include span-columns( 12 );
+      float: none;
     }
 
   }
