@@ -17,12 +17,22 @@ main {
 .content-container {
   padding: 2rem 0;
 
-  &.hero_image-sunset_girl {
+  &.hero_image {
     background-color: #eaeaea;
-    background-image: url("../images/sunset-girl.jpg");
     background-position: bottom;
     background-size: 100%;
     background-repeat: no-repeat;
+    min-height: 300px;
+
+    &.sunset_girl {
+      background-image: url("../images/sunset-girl.jpg");
+    }
+
+    &.generic {
+      background-image: url("http://stevensegallery.com/1100/500");
+      background-position: top;
+    }
+
   }
 
   &.gradient-blue {
@@ -75,8 +85,6 @@ main {
   }
 }
 
-
-
 $blockquote_border: 1px solid $brand-yellow;
 
 .block_quote {
@@ -101,4 +109,79 @@ $blockquote_border: 1px solid $brand-yellow;
     font-style: normal;
     margin: 1rem auto;
   }
+}
+
+.contact-card {
+
+  font-size: 1.2rem;
+  background-color: $brand-blue;
+  position: relative;
+  @include outer-container(80%);
+
+  .contact-pic {
+    @include span-columns( 4 of 6, inline-block );
+    overflow: hidden;
+    height: 500px;
+    width: 500px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .contact-text {
+    @include span-columns( 2 of 6, inline-block );
+    text-align: bottom;
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .contact-name {
+    color: white;
+    font-weight: 400;
+    word-spacing: 1000px;   
+    font-size: 1.5em; 
+    line-height: 1;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid tint($brand-blue, 40%);
+  }
+
+  .social_links {
+
+    .request {
+      display: relative;
+    }
+
+    .contact-request {
+      margin: 0;
+      font-size: .8em;
+      line-height: 1.2em;
+      position: absolute;
+      height: 3em;
+      right: -2rem;
+      bottom: -.5rem;
+      background-color: darken($brand-blue, 20%);
+      color: white;
+
+      &::before {
+        content: '';
+        line-height: 0;
+        width: 0;
+        height: 0;
+        display: block;
+        position: relative;
+        left: -2.1rem;
+        top: -.85em;
+        border-right: 1em solid darken($brand-blue, 20%);
+        border-top: 1.5em solid transparent;
+        border-bottom: 1.5em solid transparent;
+      }
+    }
+  }
+
+
+
 }

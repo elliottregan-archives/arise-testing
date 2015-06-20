@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    include _head.jade
+    script(src='js/app.js')
+    script(src='js/controllers.js')
+  body.homepage
+    header
+      include _header.jade
+    main
+      .content-container
+        .content
+          .contact-card
+            .contact-pic
+              img(src="http://stevensegallery.com/550/500")
+            .contact-text
+              .contact-name Pam Kanaly
+              ul.social_links
+                li tw
+                li f
+                li in
+                li bl
+                li.request
+                  button.contact-request Request Pam
+
+    footer
+      include _footer.jade
