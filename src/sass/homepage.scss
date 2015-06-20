@@ -16,16 +16,46 @@
   }
 }
 
+.notes {
+  border-top: 2px solid lighten($brand-grey, 40%);
+  padding: 1rem;
+}
+
+.event-list {
+
+  .event {
+    margin: 1rem 0 2rem;
+  }
+
+  .event-title {
+    margin: 0;
+  }
+
+  .event-date {
+    display: block;
+    color: $brand-blue;
+    font-style: italic;
+    margin-bottom: .5rem;
+  }
+
+  .event-details {
+    margin-bottom: .5rem;
+    line-height: 1.25;
+  }
+
+}
 
 .card_layout {
-  padding: 1rem 0;
+  // padding: 0 0 1rem 0;
 }
 
 .card {
   background-color: white;
-  margin: 1rem;
   box-shadow: 0 4px 8px transparentize(#000, .75);
   $card-padding: 2rem;
+  margin: 1rem auto;
+
+  @include span-columns( 12 );
 
   @include media($medium-screen-up) {
     margin: auto;
@@ -37,13 +67,22 @@
     @include media($medium-screen-up) {
       margin: 1rem auto;
       @include span-columns( 12 );
-
+      &:first-of-type {
+        margin-top: 0;
+      }
       .card-image {
         width: 150px;
         margin-right: 1rem;
         float: left;
       }
     }
+  }
+
+  .card-date {
+    color: $brand-blue;
+    font-size: 1.4em;
+    font-weight: 400;
+    padding-right: .5em;
   }
 
   .card-title {
@@ -75,5 +114,9 @@
     display: block;
     font-weight: 400;
     padding: 0 $card-padding $card-padding;
+
+    &:hover {
+      color: darken($brand-yellow, 10%);
+    }
   }
 }

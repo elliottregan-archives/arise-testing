@@ -25,7 +25,9 @@ p.intro-text {
 }
 
 .blog-content {
-  @include span-columns( 8 );
+  @include media( $medium-screen-up ) {
+    @include span-columns( 8 );
+  };
 }
 
 
@@ -80,14 +82,22 @@ p.intro-text {
 }
 
 .blog-sidebar {
-  float: right;
-  @include span-columns( 4 );
-  background-color: lighten($brand-grey, 60%);
-  padding: 1rem;
-  border-radius: 10px;
+
+  display: none;
+
+  @include media( $medium-screen-up ) {
+    float: right;
+    @include span-columns( 3 );
+    @include shift(1);
+    background-color: lighten($brand-grey, 60%);
+    padding: 1rem;
+    border-radius: 10px;
+
+  }
 
   h4 {
     margin-bottom: .5rem;
+    text-transform: uppercase;
 
     &:not(:first-of-type) {
       margin-top: 1rem;
@@ -96,7 +106,8 @@ p.intro-text {
 
   a {
     color: lighten($brand-grey, 20%);
-    padding: .5rem;
+    padding: .25rem;
+    @include ellipsis(100%);
     &:hover {
       color: $brand-blue;
     }

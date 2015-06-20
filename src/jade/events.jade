@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    include _head.jade
+    script(src='js/app.js')
+    script(src='js/controllers.js')
+  body.homepage
+    header
+      include _header.jade
+    main
+      .content-container
+        .content
+            h1 Events
+            p.intro-text Vestibulum vel augue id nunc euismod imperdiet. Nulla tincidunt nulla dolor, a euismod lacus consectetur nec. Mauris et molestie dui. Mauris ac mi quis neque condimentum iaculis. Ut sit amet magna orci. Integer sit amet varius ipsum. Ut mattis ullamcorper fermentum. Integer pretium felis sit amet urna volutpat, ac elementum ante interdum.
+      .content-container.solid-orange
+        .content
+            h2.section_header Featured Events
+            ul.card_layout
+              li
+                .card.horizontal
+                  .card-image
+                    img(src="http://stevensegallery.com/300/220")
+                  h3.card-title 
+                    date.card-date 3/14
+                    | Proin ornare luctus massa, id hendrerit tellus auctor
+                  p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+                  a(href="#").read_more Read More
+              li
+                .card.horizontal
+                  .card-image
+                    img(src="http://stevensegallery.com/400/300")
+                  h3.card-title 
+                    date.card-date 3/14
+                    | Proin ornare luctus massa, id hendrerit tellus auctor
+                  p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+                  a(href="#").read_more Read More
+              li
+                .card.horizontal
+                  .card-image
+                    img(src="http://stevensegallery.com/600/450")
+                  h3.card-title 
+                    date.card-date 3/14
+                    | Proin ornare luctus massa, id hendrerit tellus auctor
+                  p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+                  a(href="#").read_more Read More
+      .content-container.solid-grey
+        section.content
+          h3.section_header Upcoming Events
+          ul.event-list
+            li.event
+              h4.event-title A Promize to Never Forget Holocost Presentation
+              date.event-date January 20 - 2:00pm
+              p.event-details Donec suscipit feugiat lectus nec
+              p.event-details Maecenas posuere, augue vitae bibendum commodo, ante mi laoreet nibh, a pulvinar massa metus eget arcu. Phasellus fermentum purus ac diam sodales dignissim.
+
+            li.event
+              h4.event-title A Promize to Never Forget Holocost Presentation
+              date.event-date January 20 - 2:00pm
+              p.event-details Donec suscipit feugiat lectus nec
+              p.event-details Maecenas posuere, augue vitae bibendum commodo, ante mi laoreet nibh, a pulvinar massa metus eget arcu. Vestibulum vel augue id nunc euismod imperdiet. Nulla tincidunt nulla dolor, a euismod lacus consectetur nec. Phasellus fermentum purus ac diam sodales dignissim.
+
+            li.event
+              h4.event-title A Promize to Never Forget Holocost Presentation
+              date.event-date January 20 - 2:00pm
+              p.event-details Donec suscipit feugiat lectus nec
+              p.event-details Maecenas posuere, augue vitae bibendum commodo, ante mi laoreet nibh, a pulvinar massa metus eget arcu. Phasellus fermentum purus ac diam sodales dignissim.
+          aside.notes
+            p.intro-text Ut nisi sem, dignissim et ultricies ac, vehicula at quam. Donec suscipit feugiat lectus nec imperdiet. Nulla a tellus nisl. Cras luctus enim sapien, at porta magna varius eget. Quisque venenatis orci nec nisl bibendum, id pharetra turpis vulputate. Etiam placerat elit vel iaculis eleifend. Sed sit amet arcu a quam commodo pharetra eget eget elit. Cras dignissim accumsan tellus, sit amet vulputate orci porttitor non.
+    footer
+      include _footer.jade
