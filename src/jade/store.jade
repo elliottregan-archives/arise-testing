@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    include _head.jade
+    script(src='js/app.js')
+    script(src='js/controllers.js')
+  body.homepage
+    header
+      include _header.jade
+    main
+      .content-container
+        .content
+          header.store-header
+            .dropdown category
+            .cart-btn Cart (0)
+          article.store-item
+            .item-content
+              .item-image
+                img(src="http://stevensegallery.com/300/320")
+              .item-info
+                h2.item-title  Product Title Here
+                h3.item-price $12.00
+                p.item-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+            .item-buttons
+              button.float_right Add to Cart
+              include _share_links.jade
+    footer
+      include _footer.jade

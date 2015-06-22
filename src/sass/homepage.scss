@@ -49,6 +49,7 @@
   // padding: 0 0 1rem 0;
 }
 
+
 .card {
   background-color: white;
   box-shadow: 0 4px 8px transparentize(#000, .75);
@@ -65,16 +66,48 @@
 
   &.horizontal {
     @include media($medium-screen-up) {
+      
       margin: 1rem auto;
       @include span-columns( 12 );
+
       &:first-of-type {
         margin-top: 0;
       }
       .card-image {
-        width: 150px;
-        margin-right: 1rem;
-        float: left;
+        @include span-columns( 4 );
+        height: 300px;
+        width: 300px;
       }
+
+      .card-info {
+        @include span-columns( 8 );
+      }
+
+    }
+  }
+
+  &.contact {
+    background-color: $brand-blue;
+    
+    .card-info {
+      padding-top: 0rem;
+    }
+
+    .card-header {
+      border-bottom: 2px solid tint($brand-blue, 20%);
+      margin: 2rem 2rem 1rem;
+    }
+
+    .card-title {
+      color: white;
+      font-size: 2em;
+      padding: 0;
+    }
+
+    .card-text {
+      color: white;
+      font-size: 1em;
+      font-weight: 400;
     }
   }
 
