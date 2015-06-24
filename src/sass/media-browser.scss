@@ -41,6 +41,9 @@
   padding: .5rem;
   text-align: center;
   border: 1px solid white;
+  text-transform: uppercase;
+  cursor: default;
+  @include user-select( none);
 }
 
 .filter-column {
@@ -57,10 +60,16 @@
     @extend %browser-list-item;
     padding: .75rem;
     font-size: .9em;
-    font-weight: 600;
+    line-height: 0;
+    font-weight: 800;
     color: $brand-yellow;
     background-color: tint($brand-yellow, 85%);
     
+    [class^="icon-"] {
+      margin-right: .5rem;
+      font-size: 1.3em;
+    }
+
     &:hover {
       background-color: darken(tint($brand-yellow, 85%), 5%);
     }
@@ -91,6 +100,7 @@
 
   .media-item {
     @extend %browser-list-item;
+    position: relative;
   }
 
   .title {
@@ -121,28 +131,66 @@
   height: 400px;
 }
 
-.media-icon {
-  float: right;
+.media-icon, .category-icon {
   width: 40px;
   height: 40px;
   margin-bottom: 50px;
   margin-right: 1rem;
   overflow: hidden;
-
-  &.Audio {
-    background-image: url(/images/audio.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+  position: absolute;
+  right: 0;
 }
 
-.search {
-  padding: 1rem;
-  border: none;
-  background-color: lighten($brand-grey, 60%);
-  border: 1px solid white;
-  width: 100%;
-  @extend %column-header;
+.category-icon {
+  right: 2rem;
+}
+
+.searchbar {
+
+  position: relative;
+
+  .search {
+    padding: 1rem;
+    padding-left: 3rem;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    background-color: lighten($brand-grey, 60%);
+    border: 1px solid white;
+    width: 100%;
+    @extend %column-header;
+    color: lighten($brand-grey, 20%);
+  }
+
+  .search_button {
+    display: inline-block;
+    position: absolute;
+    top: -.5rem;
+    left: -.5rem;
+    background-color: transparent;
+    color: lighten($brand-grey, 20%);
+    font-size: 1.8em;
+  }
+
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($brand-grey, 10%);
+  }
+
+  &::before {
+    font-family: "fontello";
+    content: '\e870';
+    display: inline-block;
+    @include transform( rotate(-90deg) );
+    position: absolute;
+    left: 2rem;
+    top: .5rem;
+    font-size: 1.25em;
+  }
 }
 
 .dropdown {
@@ -156,12 +204,19 @@
     padding: .5rem 1rem 1rem;
     line-height: .25em;
 
+    color: lighten($brand-grey, 20%);
+    text-transform: uppercase;
+    font-weight: 800;
+
     &::before {
       content: "choose filter:";
       font-size: .9em;
       line-height: 1.8em;
       display: block;
       color: grey;
+      text-transform: none;
+      font-weight: 400;
+      color: lighten($brand-grey, 30%);
     }
   }
 

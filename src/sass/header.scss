@@ -11,11 +11,13 @@
 .header_nav {
   position: relative;
   border-bottom: 2px solid white;
+  text-align: right;
 }
 
 .header_links, .social_links {
   
   display: inline-block;
+  padding: .25rem;
 
   li {
     display: inline-block;
@@ -24,7 +26,7 @@
       color: lighten($brand-grey, 10%);
       text-transform: uppercase;
       font-size: .9em;
-      padding: 1rem;
+      padding: 1rem .5rem;
 
       &:hover {
         color: darken($brand-grey, 10%);
@@ -33,6 +35,24 @@
   }
 }
 
+.has_submenu {
+  position: relative;
+}
+
 .submenu {
   display: none;
+  position: absolute;
+  background-color: transparentize(white, .2);
+  padding: 1rem;
+  text-align: left;
+  width: 200px;
+  top: 2rem;
+
+  .header_link {
+    padding: .25rem 0;
+  }
+
+  &.visible {
+    display: block;
+  }
 }

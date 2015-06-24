@@ -10,6 +10,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Parenting'
         author: 'Tamara Leach'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
       {
         title: 'minim consequat cillum proident'
@@ -17,6 +18,8 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Parenting'
         author: 'Manning Hensley'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
+        mediaIcon: 'videocam'
       }
       {
         title: 'eu est est et'
@@ -24,6 +27,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Emotional Wellness'
         author: 'Young Williamson'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
       }
       {
         title: 'aliqua duis est esse'
@@ -31,6 +35,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Finances'
         author: 'Gayle Russell'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
       }
       {
         title: 'in nulla laboris laboris'
@@ -38,6 +43,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Emotional Wellness'
         author: 'Hazel Tyler'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
       {
         title: 'commodo dolore laborum fugiat'
@@ -45,6 +51,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Finances'
         author: 'Mai Crawford'
         mediaType: 'Text'
+        mediaIcon: 'doc-text'
       }
       {
         title: 'consectetur deserunt proident ea'
@@ -52,6 +59,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Finances'
         author: 'Alexandra Levy'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
       }
       {
         title: 'aliqua labore ullamco ipsum'
@@ -59,6 +67,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Spiritual Growth'
         author: 'Yvonne Cooper'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
       {
         title: 'esse minim fugiat labore'
@@ -66,6 +75,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Finances'
         author: 'Therese Burke'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
       }
       {
         title: 'esse amet nostrud nisi'
@@ -73,6 +83,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Home Life'
         author: 'Levine Mclean'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
       {
         title: 'excepteur occaecat elit ad'
@@ -80,6 +91,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Parenting'
         author: 'Rivas Berry'
         mediaType: 'Text'
+        mediaIcon: 'doc-text'
       }
       {
         title: 'labore est quis velit'
@@ -87,6 +99,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Finances'
         author: 'Brewer Watts'
         mediaType: 'Text'
+        mediaIcon: 'doc-text'
       }
       {
         title: 'consectetur ipsum duis ex'
@@ -94,6 +107,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Emotional Wellness'
         author: 'Tania Hale'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
       }
       {
         title: 'eiusmod mollit labore eu'
@@ -101,6 +115,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Emotional Wellness'
         author: 'Petty Kirkland'
         mediaType: 'Text'
+        mediaIcon: 'doc-text'
       }
       {
         title: 'eu ea eiusmod nostrud'
@@ -108,6 +123,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Emotional Wellness'
         author: 'Cleveland Cantrell'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
       {
         title: 'ad minim ullamco labore'
@@ -115,6 +131,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Parenting'
         author: 'Janell Acosta'
         mediaType: 'Video'
+        mediaIcon: 'videocam'
       }
       {
         title: 'aliquip ex ut eiusmod'
@@ -122,6 +139,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Spiritual Growth'
         author: 'Ratliff Meadows'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
       {
         title: 'nisi proident consectetur qui'
@@ -129,6 +147,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Finances'
         author: 'Trudy Foster'
         mediaType: 'Text'
+        mediaIcon: 'doc-text'
       }
       {
         title: 'nulla enim cillum laboris'
@@ -136,6 +155,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Spiritual Growth'
         author: 'Alyce Aguirre'
         mediaType: 'Text'
+        mediaIcon: 'doc-text'
       }
       {
         title: 'sint et elit ullamco'
@@ -143,6 +163,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         category: 'Home Life'
         author: 'Lucille Lang'
         mediaType: 'Audio'
+        mediaIcon: 'mic'
       }
     ]
     # http://www.json-generator.com/
@@ -163,9 +184,47 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
 
     $scope.categoryFilter = undefined
     $scope.searchParameter = ''
-    $scope.categoryOptions = ['Parenting','Spiritual Growth', 'Emotional Wellness', 'Home Life', 'Finances']
+    $scope.categoryOptions = [
+      {
+        text: 'Parenting'
+        icon: 'user'
+      }
+      {
+        text: 'Spiritual Growth'
+        icon: 'leaf'
+      }
+      {
+        text: 'Emotional Wellness'
+        icon: 'sun'
+      }
+      {
+        text: 'Home Life'
+        icon: 'home'
+      }
+      {
+        text: 'Finances'
+        icon: 'calculator'
+      }
+    ]
 
+    $scope.mediaOptions = [
+      {
+        text: 'Audio'
+        icon: 'mic'
+      }
+      {
+        text: 'Video'
+        icon: 'videocam'
+      }
+      {
+        text: 'Text'
+        icon: 'doc-text'
+      }
+    ]
 
+    angular.forEach $scope.mediaLibrary, (value, key) ->
+      if value.category == 'Spiritual Growth'
+        value.categoryIcon = 'leaf'
 
     $scope.search = (item) ->
       conditions = item.title.indexOf($scope.searchParameter)!=-1 && (item.category.indexOf($scope.mediaFilter)!=-1 || $scope.mediaFilter==undefined)
@@ -175,7 +234,6 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
 
     $scope.backToFilter = () ->
       $scope.mediaIsFiltered = false
-
 
     $scope.filterMedia = (filterParameter) ->
       $scope.mediaFilter = filterParameter
@@ -188,11 +246,11 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
       }
       {
         name: "Category"
-        options: ['Parenting','Spiritual Growth', 'Emotional Wellness', 'Home Life', 'Finances']
+        options: $scope.categoryOptions
       }
       {
         name: "Media Type"
-        options: ["Audio", "Video", "Text"]
+        options: $scope.mediaOptions
       }
     ]
 

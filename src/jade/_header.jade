@@ -1,23 +1,27 @@
 .nav-container
   nav.header_nav.content
     ul.header_links
-      li
+      li.header_link.has_submenu
         a(href="#") About
         ul.submenu
-          li Statement of Belief
-          li Staff
-          li Board of Directors
-          li Contact Us
-          li Do You Know Jesus
-      li: a(href="education-center") Education Center
-      li: a(href="events") Events
-      li: a(href="#") Blog
-      li: a(href="#") Resources
-      li: a(href="#") Speaker
-      li: a(href="#") Store
-      li: a(href="#") Donate
+          li.header_link: a(href="#") Statement of Belief
+          li.header_link: a(href="#") Staff
+          li.header_link: a(href="#") Board of Directors
+          li.header_link: a(href="#") Contact Us
+          li.header_link: a(href="#") Do You Know Jesus
+      li.header_link: a(href="education-center") Education Center
+      li.header_link: a(href="events") Events
+      li.header_link: a(href="#") Blog
+      li.header_link: a(href="#") Resources
+      li.header_link: a(href="#") Speaker
+      li.header_link: a(href="#") Store
+      li.header_link: a(href="#") Donate
     ul.social_links
-      li tw
-      li yt
-      li f
-      li i
+      li.header_link: a(href="#") 
+        i.icon-twitter-bird
+      li.header_link: a(href="#") 
+        i.icon-youtube-play
+      li.header_link: a(href="#") 
+        i.icon-facebook-1
+      li.header_link: a(href="#") 
+        i.icon-instagram-filled

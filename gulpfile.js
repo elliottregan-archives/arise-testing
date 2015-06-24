@@ -25,7 +25,7 @@ gulp.task('dev', function() {
   .on('start', ['source', 'watch']);
 });
 
-gulp.task('source', ['templates','styles','images','scripts', 'angular','bower', 'fonts']);
+gulp.task('source', ['templates','styles','images','scripts', 'angular','bower', 'fontello']);
 
 gulp.task('watch', function() {
   gulp.watch(SRC+'/jade/*.jade', ['templates']);
@@ -61,6 +61,11 @@ gulp.task('styles', function() {
     }))
     .pipe(gulp.dest(DEST+'/styles'))
     .pipe(gulpif(dev,lr()));
+});
+
+gulp.task('fontello', function() {
+  gulp.src('src/fontello/**')
+    .pipe(gulp.dest(DEST+'/fontello'));
 });
 
 gulp.task('images', function() {
@@ -111,22 +116,15 @@ gulp.task('angular-directives', function() {
 
 gulp.task('bower', function() {
   gulp.src([
-    // 'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/jquery/dist/jquery.min.js',
     'bower_components/angular/angular.js',
     "bower_components/angular-animate/angular-animate.js",
     ])
     .pipe(concat('bower_components.js'))
     .pipe(gulp.dest(DEST+'/js'));
   gulp.src([
-    // 'bower_components/jquery/dist/jquery.min.map',
+    'bower_components/jquery/dist/jquery.min.map',
     'bower_components/angular/angular.min.js.map',
     ])
     .pipe(gulp.dest(DEST+'/js'));
-});
-
-gulp.task('fonts', function() {
-  gulp.src([
-    'src/izicons/**/*'
-    ])
-    .pipe(gulp.dest(DEST+'/styles/izicons'));
 });
