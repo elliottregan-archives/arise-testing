@@ -2,7 +2,6 @@
   position: absolute;
   left: 0;
 
-  top: 1rem;
   width: 100%;
   z-index: 100;
   // background-color: red;
@@ -12,6 +11,11 @@
   position: relative;
   border-bottom: 2px solid white;
   text-align: right;
+  display: none;
+
+  @include media( $medium-screen-up ) {
+    display: block;
+  }
 }
 
 .header_links, .social_links {
@@ -55,4 +59,109 @@
   &.visible {
     display: block;
   }
+}
+
+// *********
+.mobile_header {
+
+  $header-height: 4rem;
+
+  @include media( $medium-screen-up ) {
+    display: none;
+  }
+
+  width: 100%;
+  margin: 0;
+  height: $header-height;
+  position: relative;
+
+  > * {
+    padding: 0;
+    margin: 0;
+
+    height: $header-height;
+  }
+
+  .header_links {
+    background-color: grey;
+    display: block;
+  }
+
+  .sidebar_toggle {
+    background-color: darkgrey;
+    padding: 1rem;
+    width: 50px;
+    right: 0;
+    top: 0;
+    position: absolute;
+  }
+  /* arrow buttons */
+
+  .arrow_divider {
+    position: absolute;
+    right: 60px;
+    bottom: 0;
+  }
+
+  .arrow_divider:after {
+    top: 0;
+    position: absolute;
+
+    content: '';
+    border-top: $header-height/2 solid;
+    border-bottom: $header-height/2 solid;
+    border-left: .75em solid;
+    border-right: .75em solid;
+  }
+
+  .arrow_divider:after {
+    border-top-color: darkgrey;
+    border-bottom-color: darkgrey;
+    border-left-color: grey;
+    border-right-color: darkgrey;
+  }
+
+  .arrow_divider:before {
+    top: 0;
+    right: 0;
+    position: absolute;
+
+    content: '';
+    border-top: $header-height/2 solid;
+    border-bottom: $header-height/2 solid;
+    border-left: 1em solid;
+    border-right: 0em solid;
+  }
+
+  .arrow_divider:before {
+    border-top-color: grey;
+    border-bottom-color: grey;
+    border-left-color: grey;
+    border-right-color: darkgrey;
+  }
+  /* hover */
+
+  .arrow_divider::after {
+    transition: 0.3s ease-out;
+    transition-delay: .3s;
+  }
+
+  .arrow_divider::before {
+    transition: 0.3s ease-in;
+  }
+
+  .arrow_divider:hover::after {
+    border-left-width: 0;
+    border-right-width: .75em;
+    transition-delay: 0s;
+    transition: 0.3s ease-in;
+  }
+
+  .arrow_divider:hover::before {
+    transition: 0.3s ease-out;
+   border-left-width: 1em;
+   border-right-width: .75em;
+    transition-delay: .3s;
+  }
+
 }
