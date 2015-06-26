@@ -7,7 +7,8 @@ $(document).ready ->
     $(this).siblings('.submenu').toggleClass 'visible'
 
 
-  $('.header_toggle').on 'click', (e) ->
+  $('.sidebar_toggle').on 'click', (e) ->
     e.preventDefault()
     console.log "clicky"
-    $(this).siblings('.arrow_divider').toggleClass 'right'
+    $(this).siblings('.arrow_divider').toggleClass 'to_the_right'
+    $('.slideaway_wrapper').toggleClass 'slide_away'

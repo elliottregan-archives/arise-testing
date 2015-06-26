@@ -1,3 +1,6 @@
+ $mobile-header-color: lighten($brand-grey, 10%);
+
+
 .nav-container {
   position: absolute;
   left: 0;
@@ -30,7 +33,7 @@
       color: lighten($brand-grey, 10%);
       text-transform: uppercase;
       font-size: .9em;
-      padding: 1rem .5rem;
+      padding: 1rem .3rem;
 
       &:hover {
         color: darken($brand-grey, 10%);
@@ -61,7 +64,70 @@
   }
 }
 
-// *********
+.sidebar_toggle .open-icon {
+  font-size: 2em;
+  line-height: 1;
+  color: lighten($brand-grey, 30%);
+  vertical-align: text-top;
+  @include transition ( all .5s ease-in-out );
+  position: relative;
+  font-style: normal;
+  left: -15px;
+  vertical-align: top;
+}
+
+.slide_away .sidebar_toggle .open-icon {
+  font-size: 0;
+}
+
+.close-icon {
+
+}
+
+.close-icon {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+
+  @include transform( scale(0) );
+  @include transition ( all .5s ease-in-out );
+
+
+  &:hover {
+    &::before, &::after {
+      background-color: lighten($brand-grey, 40%);
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    border-radius: 4px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+      background-color: lighten($brand-grey, 30%);
+  }
+
+  &::before {
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    @include transform(rotate(-45deg));
+  }
+}
+
+.slide_away {
+  .close-icon {
+    @include transform( scale(1) );
+  }
+}
+
 .mobile_header {
 
   $header-height: 4rem;
@@ -76,20 +142,16 @@
   position: relative;
 
   > * {
-    padding: 0;
     margin: 0;
-
     height: $header-height;
   }
 
-  .header_links {
-    background-color: grey;
-    display: block;
-  }
+  background-color: $mobile-header-color;
 
   .sidebar_toggle {
-    background-color: darkgrey;
-    padding: 1rem;
+    // background-color: $brand-grey;
+    background-color: transparent;
+    padding: 0;
     width: 50px;
     right: 0;
     top: 0;
@@ -101,27 +163,22 @@
     position: absolute;
     right: 60px;
     bottom: 0;
+    @include transition ( all .3s ease-in-out );
   }
 
-  .arrow_divider:after {
-    top: 0;
-    position: absolute;
-
+  .arrow_divider::after {
     content: '';
+    position: absolute;
+    top: 0;
+
     border-top: $header-height/2 solid;
     border-bottom: $header-height/2 solid;
-    border-left: .75em solid;
-    border-right: .75em solid;
+
+    border-left: 0 solid;
+    border-right: 80px solid;
   }
 
-  .arrow_divider:after {
-    border-top-color: darkgrey;
-    border-bottom-color: darkgrey;
-    border-left-color: grey;
-    border-right-color: darkgrey;
-  }
-
-  .arrow_divider:before {
+  .arrow_divider::before {
     top: 0;
     right: 0;
     position: absolute;
@@ -129,39 +186,51 @@
     content: '';
     border-top: $header-height/2 solid;
     border-bottom: $header-height/2 solid;
+
     border-left: 1em solid;
-    border-right: 0em solid;
+    border-right: .75em solid;
   }
 
-  .arrow_divider:before {
-    border-top-color: grey;
-    border-bottom-color: grey;
-    border-left-color: grey;
-    border-right-color: darkgrey;
+  .arrow_divider::after {
+    border-top-color: $brand-grey;
+    border-bottom-color: $brand-grey;
+    border-left-color: $mobile-header-color;
+    border-right-color: $brand-grey;
+  }
+
+
+  .arrow_divider::before {
+    border-top-color: $mobile-header-color;
+    border-bottom-color: $mobile-header-color;
+    border-left-color: $mobile-header-color;
+    border-right-color: $brand-grey;
   }
   /* hover */
 
   .arrow_divider::after {
-    transition: 0.3s ease-out;
-    transition-delay: .3s;
+    @include transition ( all .3s ease-in 0s);
   }
 
   .arrow_divider::before {
-    transition: 0.3s ease-in;
+    @include transition ( all .3s ease-out .3s);
   }
 
-  .arrow_divider:hover::after {
-    border-left-width: 0;
+  .arrow_divider.to_the_right {
+    right: 0;
+  }
+
+  .arrow_divider.to_the_right::after {
+    @include transition ( all 0.3s ease-out .3s);
+
+    border-left-width: .75em;
     border-right-width: .75em;
-    transition-delay: 0s;
-    transition: 0.3s ease-in;
   }
 
-  .arrow_divider:hover::before {
-    transition: 0.3s ease-out;
-   border-left-width: 1em;
-   border-right-width: .75em;
-    transition-delay: .3s;
+  .arrow_divider.to_the_right::before {
+    @include transition ( all 0.3s ease-in 0s);
+
+    border-left-width: 1em;
+    border-right-width: 0;
   }
 
 }

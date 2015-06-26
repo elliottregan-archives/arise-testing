@@ -13,6 +13,69 @@ $gutter: 30px;
 
 main {
   // margin-top: 4rem;
+  overflow: hidden;
+}
+
+.mobile_sidebar {
+  position:fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin-left: 25%;
+  height: 100%;
+  width: 75%;
+  background-color: $brand-grey;
+
+  .header_links {
+    
+    position: relative;
+    height: 100%;
+    overflow: scroll;
+    padding: 4rem 2rem;
+    font-size: 1.2em;
+
+    li {
+      display: block;
+      height: auto;
+      line-height: 0;
+
+      a {
+        color: white;
+        padding: 0;
+        display: inline-block;
+        margin: 1rem 0;
+      }
+    }
+
+  }
+
+  .submenu {
+    background-color: transparent;
+    display: block;
+    position: static;
+    padding: .5rem 1rem;
+
+    .header_link a {
+      color: $brand-yellow;
+      font-size: .8em;
+
+    }
+  }
+
+  .has_submenu a {
+    color: $brand-yellow;
+  }
+
+}
+
+.slideaway_wrapper {
+  z-index: 10;
+  position: relative;
+  @include transition ( all .5s ease-in-out );
+  
+  &.slide_away {
+    @include transform( translatex(-75%) );
+  }
 }
 
 .content-container {
