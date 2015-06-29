@@ -1,3 +1,101 @@
+.media-card {
+
+  background-color: white;
+  color: $brand-grey;
+  font-size: 1rem;
+
+  @include media( $medium-screen-up ) {
+    @include span-columns( 4 );
+  }
+
+  .media-card-header {
+    background-color: $brand-grey;
+    padding: 1.5rem;
+    position: relative;
+
+    .media-title {
+      font-size: 1em;
+      color: white;
+      margin: 0;
+    }
+
+    .media-author {
+      font-size: 1em;
+      color: $brand-yellow;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .media-view-btn {
+      position: absolute;
+      left: -.5rem;
+      bottom: -2rem;
+      background-color: $brand-blue;
+      height: 3rem;
+      box-shadow: 2px 2px 0 transparentize($brand-grey, .6);
+
+      a {
+        color: white;
+        font-weight: 800;
+      }
+
+      i {
+        font-size: 1.25em;
+        margin-right: .5rem;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3rem;
+        right: -9px;
+        top: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent $brand-blue;
+        border-width: 1.5rem 0 1.5rem 9px;
+        background-clip: border-box;
+        z-index: 20;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3rem;
+        right: -11px;
+        top: 2px;
+        border-style: solid;
+        border-color: transparent transparent transparent transparentize($brand-grey, .6);
+        border-width: 1.5rem 0 1.5rem 9px;
+        background-clip: border-box;
+        z-index: 10;
+      }
+    }
+  }
+
+  .media-card-content {
+
+    padding: 3rem 1.5rem 1rem;
+
+    .media-description {
+      color: $brand-grey;
+    }
+  }
+
+  .media-card-category {
+    border-top: 2px solid lighten($brand-grey, 60%);
+    padding: 1rem 0 0;
+    color: $brand-yellow;
+    font-weight: 800;
+
+    i {
+      margin-right: .5rem;
+      font-size: 1.5em;
+    }
+  }
+}
+
 .browser {
   height: 500px;
   position: relative;

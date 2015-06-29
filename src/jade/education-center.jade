@@ -16,7 +16,51 @@ html
       main(ng-app="mediaBrowser")
         .content-container
           .content
-            h1 Media Browser
+            h1 Education Center
+            p.intro-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
+        .content-container.gradient-orange
+          .content
+            h2 Recent Additions
+            ul.media-cars
+              li.media-card
+                header.media-card-header
+                  h1.media-title Title of Media
+                  h2.media-author Author
+                  button.media-view-btn: a(href="#")
+                    i.icon-video
+                    span Watch
+                .media-card-content
+                  p.media-description Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia.
+                  .media-card-category
+                    i.icon-leaf
+                    span Spiritual Growth
+              li.media-card
+                header.media-card-header
+                  h1.media-title Title of Media
+                  h2.media-author Author
+                  button.media-view-btn: a(href="#")
+                    i.icon-doc
+                    span View
+                .media-card-content
+                  p.media-description Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia.
+                  .media-card-category
+                    i.icon-sun
+                    span Emotional Wellness
+              li.media-card
+                header.media-card-header
+                  h1.media-title Title of Media
+                  h2.media-author Author
+                  button.media-view-btn: a(href="#")
+                    i.icon-download
+                    span Download
+                .media-card-content
+                  p.media-description Duis rhoncus velit nec est condimentum feugiat. Donec aliquam augue nec gravida lobortis. Nunc arcu mi, pretium quis dolor id, iaculis euismod ligula. Donec tincidunt gravida lacus eget lacinia.
+                  .media-card-category
+                    i.icon-address
+                    span Career
+        .content-container
+          .content
+            h2 Library
 
           .content(ng-controller="mediaBrowserController")
             .searchbar

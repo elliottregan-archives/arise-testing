@@ -137,6 +137,14 @@ main {
     }
   }
 
+  &.gradient-orange {
+    @include background-image(linear-gradient( tint($brand-yellow, 50%), $brand-yellow ));
+    color: white;
+    h2 {
+      color: white;
+    }
+  }
+
   &.solid-blue {
     background-color: $brand-blue;
 
