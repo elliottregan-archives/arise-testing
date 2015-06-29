@@ -22,6 +22,14 @@
   @include media($medium-screen-up) {
     @include span-columns( 3 );
   }
+
+  &.contact-column {
+    padding-right: 25%;
+
+    @include media($medium-screen-up) {
+      padding-right: 0;
+    }
+  }
 }
 
 .contact_links a {
