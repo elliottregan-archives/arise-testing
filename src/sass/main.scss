@@ -25,7 +25,9 @@ main {
   height: 100%;
   width: 75%;
   background-color: $brand-grey;
-
+  @include media( $medium-screen-up ) {
+    display: none;
+  }
   .header_links {
     
     position: relative;
@@ -80,6 +82,7 @@ main {
 
 .content-container {
   padding: 2rem 0;
+  background-color: white;
 
   &.hero_image {
     background-color: #eaeaea;
@@ -87,6 +90,7 @@ main {
     background-size: 100%;
     background-repeat: no-repeat;
     min-height: 300px;
+    margin-bottom: 0;
 
     &.sunset_girl {
       background-image: url("../images/sunset-girl.jpg");
@@ -102,6 +106,9 @@ main {
   &.gradient-blue {
     @include background-image(linear-gradient( tint($brand-blue, 50%), $brand-blue ));
     color: white;
+    h2 {
+      color: white;
+    }
   }
 
   &.solid-blue {
@@ -179,15 +186,28 @@ $blockquote_border: 1px solid $brand-yellow;
 .contact-card {
 
   font-size: 1.2rem;
-  background-color: $brand-blue;
-  position: relative;
-  @include outer-container(80%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @include clearfix;
+
+  @include media( $medium-screen-up ) {
+    @include outer-container(80%);
+    background-color: $brand-blue;
+    position: relative;
+  
+  }
 
   .contact-pic {
-    @include span-columns( 4 of 6, inline-block );
+    
+    @include media( $medium-screen-up ) {
+      @include span-columns( 4 of 6, inline-block );
+      height: 500px;
+      width: 500px;
+
+    }
+
+    @include span-columns(12, block );
     overflow: hidden;
-    height: 500px;
-    width: 500px;
 
     img {
       height: 100%;
@@ -195,26 +215,44 @@ $blockquote_border: 1px solid $brand-yellow;
   }
 
   .contact-text {
-    @include span-columns( 2 of 6, inline-block );
-    text-align: bottom;
-    position: absolute;
-    vertical-align: bottom;
-    bottom: 1rem;
-    right: 1rem;
+    @include span-columns(12, block );
+    display: none;
+
+    @include media( $medium-screen-up ) {
+      @include span-columns( 2 of 6, inline-block );
+      position: absolute;
+      vertical-align: bottom;
+      bottom: 1rem;
+      right: 1rem;
+      text-align: bottom;
+
+    }
   }
 
   .contact-name {
+
+    padding: 1rem 0;
     color: white;
-    font-weight: 400;
-    word-spacing: 1000px;   
-    font-size: 1.5em; 
-    line-height: 1;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid tint($brand-blue, 40%);
+    padding: 1rem;
+    @include media( $medium-screen-up ) {
+
+      color: white;
+      font-weight: 400;
+      word-spacing: 1000px;   
+      font-size: 1.5em; 
+      line-height: 1;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid tint($brand-blue, 40%);
+    }
   }
 
   .connect_links {
+      display: none;
+
+    @include media( $medium-screen-up ) {
+      display: block;
+    }
 
     padding: .5rem 0;
 

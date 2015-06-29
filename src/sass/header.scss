@@ -8,6 +8,10 @@
   width: 100%;
   z-index: 100;
   // background-color: red;
+
+  @include media( $medium-screen-up ) {
+    height: 40px;
+  }
 }
 
 .header_nav {
@@ -24,7 +28,7 @@
 .header_links, .social_links {
   
   display: inline-block;
-  padding: .25rem;
+  padding: 1rem .25rem;
 
   li {
     display: inline-block;
@@ -54,34 +58,47 @@
   text-align: left;
   width: 200px;
   top: 2rem;
+  left: -1rem;
+  @include transition( all .3s ease-in-out );
 
   .header_link {
     padding: .25rem 0;
   }
 
-  &.visible {
+  &.visuallyHidden {
+    opacity: 0;
     display: block;
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+
+  li {
+    opacity: 0;
+    @include transition( all .5s ease-in-out );
+
+    &.visible {
+      opacity: 1;
+    }
   }
 }
 
 .sidebar_toggle .open-icon {
-  font-size: 2em;
-  line-height: 1;
+  font-size: 1.7em;
+  line-height: 1.25;
   color: lighten($brand-grey, 30%);
   vertical-align: text-top;
   @include transition ( all .5s ease-in-out );
   position: relative;
   font-style: normal;
-  left: -15px;
+  left: 0;
   vertical-align: top;
 }
 
 .slide_away .sidebar_toggle .open-icon {
-  font-size: 0;
-}
-
-.close-icon {
-
+  opacity: 0;
+  width: 0;
 }
 
 .close-icon {
@@ -90,6 +107,7 @@
   width: 30px;
   height: 30px;
   overflow: hidden;
+  right: 1rem;
 
   @include transform( scale(0) );
   @include transition ( all .5s ease-in-out );
@@ -130,10 +148,17 @@
 
 .mobile_header {
 
-  $header-height: 4rem;
+  $header-height: 3rem;
 
   @include media( $medium-screen-up ) {
     display: none;
+  }
+
+  .header_link a {
+    color: lighten($brand-grey, 50%);
+    font-size: 1.3em;
+    line-height: 0;
+    font-family: $heading-font-family;
   }
 
   width: 100%;

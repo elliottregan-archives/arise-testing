@@ -4,22 +4,8 @@ html
     include _head.jade
   body.homepage
     nav.mobile_sidebar
-      ul.header_links
-        li.header_link.has_submenu
-          a(href="#") About
-          ul.submenu
-            li.header_link: a(href="#") Statement of Belief
-            li.header_link: a(href="#") Staff
-            li.header_link: a(href="#") Board of Directors
-            li.header_link: a(href="#") Contact Us
-            li.header_link: a(href="#") Do You Know Jesus
-        li.header_link: a(href="education-center") Education Center
-        li.header_link: a(href="events") Events
-        li.header_link: a(href="#") Blog
-        li.header_link: a(href="#") Resources
-        li.header_link: a(href="#") Speaker
-        li.header_link: a(href="#") Store
-        li.header_link: a(href="#") Donate
+      include _mobile_nav.jade
+
     .slideaway_wrapper
       header
         include _header.jade

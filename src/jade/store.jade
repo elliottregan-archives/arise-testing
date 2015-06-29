@@ -4,30 +4,33 @@ html
     include _head.jade
     script(src='js/app.js')
     script(src='js/controllers.js')
-  body.homepage
-    header
-      include _header.jade
-    main
-      .content-container
-        .content
-          header.store-header
-            .dropdown category
-            .cart-btn Cart (0)
-          article.store-item
-            .item-content
-              .item-image
-                img(src="http://stevensegallery.com/300/320")
-              .item-info
-                h2.item-title  Product Title Here
-                h3.item-price $12.00
-                p.item-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
-            .item-buttons
-              button.float_right Add to Cart
-              include _share_links.jade
-      .content-container
-        .content
-          aside.notes
-            p.intro-text Ut nisi sem, dignissim et ultricies ac, vehicula at quam. Donec suscipit feugiat lectus nec imperdiet. Nulla a tellus nisl. Cras luctus enim sapien, at porta magna varius eget. Quisque venenatis orci nec nisl bibendum, id pharetra turpis vulputate. Etiam placerat elit vel iaculis eleifend. Sed sit amet arcu a quam commodo pharetra eget eget elit. Cras dignissim accumsan tellus, sit amet vulputate orci porttitor non.
+  body
+    nav.mobile_sidebar
+      include _mobile_nav.jade
+    .slideaway_wrapper
+      header
+        include _header.jade
+      main
+        .content-container
+          .content
+            header.store-header
+              .dropdown category
+              .cart-btn Cart (0)
+            article.store-item
+              .item-content
+                .item-image
+                  img(src="http://stevensegallery.com/300/320")
+                .item-info
+                  h2.item-title  Product Title Here
+                  h3.item-price $12.00
+                  p.item-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
+              .item-buttons
+                button.float_right Add to Cart
+                include _share_links.jade
+        .content-container
+          .content
+            aside.notes
+              p.intro-text Ut nisi sem, dignissim et ultricies ac, vehicula at quam. Donec suscipit feugiat lectus nec imperdiet. Nulla a tellus nisl. Cras luctus enim sapien, at porta magna varius eget. Quisque venenatis orci nec nisl bibendum, id pharetra turpis vulputate. Etiam placerat elit vel iaculis eleifend. Sed sit amet arcu a quam commodo pharetra eget eget elit. Cras dignissim accumsan tellus, sit amet vulputate orci porttitor non.
 
-    footer
-      include _footer.jade
+      footer
+        include _footer.jade
