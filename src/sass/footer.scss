@@ -21,11 +21,14 @@
 .footer_column {
   @include media($medium-screen-up) {
     @include span-columns( 3 );
+    display: block;
   }
+  display: none;
+  margin-bottom: 2rem;
 
   &.contact-column {
     padding-right: 25%;
-
+    display: block;
     @include media($medium-screen-up) {
       padding-right: 0;
     }
