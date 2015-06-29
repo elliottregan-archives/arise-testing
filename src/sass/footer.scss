@@ -23,3 +23,40 @@
     @include span-columns( 3 );
   }
 }
+
+.contact_links a {
+  text-transform: uppercase;
+  color: white;
+  line-height: 1.5;
+  font-size: .9em;
+  font-weight: 800;
+
+  i {
+    color: darken($brand-blue, 15%);
+    font-size: 1.8em;
+    margin-right: .5rem;
+  }
+}
+
+.content-container.copyright_info {
+  background-color: darken($brand-blue, 15%);
+  text-transform: uppercase;
+  color: white;
+  font-size: .9em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-align: center;
+
+  a {
+    color: white;
+  }
+
+  .social_links {
+    border-bottom: none;
+    font-size: 1.8em;
+
+    a:hover {
+      color: lighten($brand-blue, 40%);
+    }
+  }
+}

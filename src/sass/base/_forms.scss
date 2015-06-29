@@ -34,42 +34,46 @@ label {
 #{$all-text-inputs},
 select[multiple=multiple],
 textarea {
-  background-color: tint($brand-blue, 80%);
+  background-color: darken($brand-blue, 20%);
+  border-radius: 4px;
   border: none;
-  color: $brand-blue;
+  color: white;
   font-weight: 800;
+  text-align: center;
   box-sizing: border-box;
   font-family: $heading-font-family;
   text-transform: uppercase;
   font-size: $base-font-size;
-  margin-bottom: $base-spacing / 2;
+  margin: $base-spacing / 2 0;
   padding: $base-spacing / 3;
   width: 100%;
+  border: 2px solid darken($brand-blue, 20%);
 
   &::-webkit-input-placeholder {
-     color: $brand-blue;
+     color: white;
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-     color: $brand-blue;  
+     color: white;  
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-     color: $brand-blue;  
+     color: white;  
+     opacity: .8;
   }
 
   &:-ms-input-placeholder {  
-     color: $brand-blue;  
+     color: white;  
   }
 
-  &:hover {
-    background-color: tint($brand-blue, 85%);
+  &::hover {
+    background-color: darken($brand-blue, 10%);
 
   }
 
   &:focus {
     border-color: $action-color;
-    outline: 2px solid tint($brand-blue, 20%);
+    border: 2px solid darken($brand-blue, 10%);
 
   }
 
