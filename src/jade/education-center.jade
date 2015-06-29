@@ -14,35 +14,36 @@ html
       header
         include _header.jade
       main(ng-app="mediaBrowser")
-        .content
-          h1 Media Browser
+        .content-container
+          .content
+            h1 Media Browser
 
-        .content(ng-controller="mediaBrowserController")
-          .searchbar
-            input.search(ng-model="searchParameter" placeholder="search")
-            button.search_button.icon-search-outline
-          .browser
-            .filter-column(ng-class="{isVisible: !mediaIsFiltered}")
-              h4.column-header.dropdown-trigger(ng-click="toggleFilterDropdown()" ng-bind="filterName")
-              .dropdown
-                ul.dropdown-options(ng-show="sortDropdownVisible")
-                  li.dropdown-option(ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)")
-              ul.filter-list
-                li.filter-item(ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}")
-                  i(class="icon-th")
-                  span Show All
-                li.filter-item(ng-repeat="filter in filterCategories" ng-click="filterMedia(filter.text)" ng-class="{selected: mediaFilter==filter.text}")
-                  i(class="icon-{{filter.icon}}")  
-                  span(ng-bind="filter.text")
-            .media-column(ng-class="{isVisible: mediaIsFiltered}")
-              h4.column-header Resource
-              ul.media-list
-                li.media-item.MOBILE-ONLY(ng-click="backToFilter()") <- back
-                li.media-item(ng-repeat="media in mediaLibrary | filter : search ")
-                  i.media-icon(class="icon-{{media.mediaIcon}}")
-                  i.category-icon(class="icon-{{media.categoryIcon}}")
-                  h1.title(ng-bind="media.title")
-                  h2.author(ng-bind="media.author")
-                  p.description(ng-bind="media.description")
-      footer
-        include _footer.jade
+          .content(ng-controller="mediaBrowserController")
+            .searchbar
+              input.search(ng-model="searchParameter" placeholder="search")
+              button.search_button.icon-search-outline
+            .browser
+              .filter-column(ng-class="{isVisible: !mediaIsFiltered}")
+                h4.column-header.dropdown-trigger(ng-click="toggleFilterDropdown()" ng-bind="filterName")
+                .dropdown
+                  ul.dropdown-options(ng-show="sortDropdownVisible")
+                    li.dropdown-option(ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)")
+                ul.filter-list
+                  li.filter-item(ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}")
+                    i(class="icon-th")
+                    span Show All
+                  li.filter-item(ng-repeat="filter in filterCategories" ng-click="filterMedia(filter.text)" ng-class="{selected: mediaFilter==filter.text}")
+                    i(class="icon-{{filter.icon}}")  
+                    span(ng-bind="filter.text")
+              .media-column(ng-class="{isVisible: mediaIsFiltered}")
+                h4.column-header Resource
+                ul.media-list
+                  li.media-item.MOBILE-ONLY(ng-click="backToFilter()") <- back
+                  li.media-item(ng-repeat="media in mediaLibrary | filter : search ")
+                    i.media-icon(class="icon-{{media.mediaIcon}}")
+                    i.category-icon(class="icon-{{media.categoryIcon}}")
+                    h1.title(ng-bind="media.title")
+                    h2.author(ng-bind="media.author")
+                    p.description(ng-bind="media.description")
+        footer
+          include _footer.jade
