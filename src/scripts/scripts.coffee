@@ -7,14 +7,13 @@ $(document).ready ->
       menuItem = $(this)
       $(this).children('.submenu').addClass 'visuallyHidden'
 
-      setInterval (->
+      setTimeout (->
+        console.log $(this), menuItem
         menuItem.children('.submenu').addClass 'visible'
       ), 20
 
-      menuItem.children('.submenu').children('.header_link').each (->
-        console.log $(this)
-        showMenuItem($(this).children('.submenu'), index)
-      )
+      menuItem.children('.submenu').children('.header_link').each (i)->
+        showMenuItem($(this), i)
 
     mouseleave: () ->
       $(this).children('.submenu').removeClass 'visible'
@@ -25,14 +24,12 @@ $(document).ready ->
         window.clearInterval menuTimeout
   }
 
-  showMenuItem = (parentList, n) ->
+  showMenuItem = (header_link, n) ->
     menuTimeouts[n] = window.setInterval (->
-      console.log n, parentList.children('.header_link').slice(n)
-      parentList.children('.header_link').slice(n).addClass 'visible'
-    ), (40+100*n)
+      header_link.addClass 'visible'
+    ), (100+30*n)
 
   $('.sidebar_toggle').on 'click', (e) ->
     e.preventDefault()
-    console.log "clicky"
     $(this).siblings('.arrow_divider').toggleClass 'to_the_right'
     $('.slideaway_wrapper').toggleClass 'slide_away'
