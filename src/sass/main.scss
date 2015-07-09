@@ -55,19 +55,22 @@ main {
     display: none;
   }
   .header_links {
-    
+
     position: relative;
     height: 100%;
     overflow: scroll;
     padding: 4rem 2rem;
     font-size: 1.2em;
 
+    .submenu {
+      opacity: 1;
+    }
+
     li {
       display: block;
       height: auto;
       line-height: 0;
       opacity: 1;
-
       a {
         color: white;
         padding: 0;
@@ -107,7 +110,13 @@ main {
   @include transition ( all .5s ease-in-out );
   
   &.slide_away {
-    @include transform( translatex(-75%) );
+    @include transform( translateX(-75%) );
+  }
+
+  @include media($medium-screen-up) {
+    &.slide_away {
+      @include transform( translateX(0) );
+    }
   }
 }
 
