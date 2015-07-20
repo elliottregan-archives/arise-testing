@@ -4,6 +4,7 @@ $(document).ready ->
 
   $(':not(.mobile_sidebar) .has_submenu').on {
     mouseenter: () ->
+      console.log "mouseon"
       menuItem = $(this)
       $(this).siblings('.header_link').addClass 'fade'
       $(this).children('.submenu').addClass 'visuallyHidden'
@@ -16,25 +17,26 @@ $(document).ready ->
         showMenuItem($(this), i)
 
     mouseleave: () ->
+      console.log "mouseoff"
       menuItem = $(this)
       $(this).children('.submenu').removeClass 'visible'
-      $(this).children('.submenu').children('li').removeClass 'visible'
+      $(this).children('.submenu').children('.header_link').removeClass 'visible'
       $(this).siblings('.header_link').removeClass 'fade'
 
       setTimeout (->
         menuItem.children('.submenu').removeClass 'visuallyHidden'
       ), 10
 
-      setTimeout (->
-        for menuTimeout in menuTimeouts
-          window.clearInterval menuTimeout
-      ), 20
+      # setTimeout (->
+      #   for menuTimeout in menuTimeouts
+      #     window.clearInterval menuTimeout
+      # ), 20
   }
 
   showMenuItem = (header_link, n) ->
     menuTimeouts[n] = window.setInterval (->
       header_link.addClass 'visible'
-    ), (150+30*n)
+    ), (150+40*n)
 
   $('.sidebar_toggle').on 'click', (e) ->
     e.preventDefault()

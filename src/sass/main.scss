@@ -90,7 +90,8 @@ main {
     display: block;
     position: static;
     padding: .5rem 1rem;
-
+    border: none;
+    
     .header_link a {
       color: $brand-yellow;
       font-size: .8em;
@@ -108,7 +109,7 @@ main {
   z-index: 10;
   position: relative;
   @include transition ( all .5s ease-in-out );
-  
+
   &.slide_away {
     @include transform( translateX(-75%) );
   }
@@ -134,6 +135,24 @@ main {
 
     &.sunset_girl {
       background-image: url("../images/sunset-girl.jpg");
+      background-size: 200%;
+      background-position: -80px bottom;
+
+      @include media(new-breakpoint(min-width rem(520) 12)) {
+        background-position: -100px 10px;
+        min-height: 500px;
+      }
+
+      @include media(new-breakpoint(min-width rem(640) 12)) {
+        background-size: 100%;
+        background-position: bottom;
+      }
+
+      @include media($medium-screen-up) {
+        background-size: 100%;
+        background-position: bottom;
+      }
+
     }
 
     &.generic {
@@ -246,11 +265,11 @@ $blockquote_border: 1px solid $brand-yellow;
     @include outer-container(80%);
     background-color: $brand-blue;
     position: relative;
-  
+
   }
 
   .contact-pic {
-    
+
     @include media( $medium-screen-up ) {
       @include span-columns( 4 of 6, inline-block );
       height: 500px;
@@ -290,8 +309,8 @@ $blockquote_border: 1px solid $brand-yellow;
 
       color: white;
       font-weight: 400;
-      word-spacing: 1000px;   
-      font-size: 1.5em; 
+      word-spacing: 1000px;
+      font-size: 1.5em;
       line-height: 1;
       padding-bottom: 1rem;
       margin-bottom: 1rem;

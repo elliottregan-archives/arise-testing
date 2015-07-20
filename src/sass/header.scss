@@ -3,8 +3,10 @@
 .homepage {
 
   .submenu {
-    background-color: transparentize(white, .2);
-    
+    background-color: transparentize(white, .1);
+    top: 2.9rem;
+    border-color: white;
+    box-shadow: none;
   }
 
   .nav-container {
@@ -68,20 +70,20 @@
 }
 
 .header_links, .social_links {
-  
+
   display: inline-block;
-  padding: 2rem .25rem 1rem;
+  padding: 1.5rem .25rem;
   border-bottom: 2px solid lighten($brand-grey, 50%);
 
   li {
     display: inline-block;
     color: lighten($brand-grey, 10%);
-    @include transition( color .6s ease-in-out );
+    @include transition( color .1s ease-out);
 
     a {
       color: inherit;
       text-transform: uppercase;
-      font-size: .9em;
+      font-size: .9rem;
       padding: 2rem .3rem;
 
     }
@@ -93,6 +95,7 @@
 
     &.fade {
       color: lighten($brand-grey, 30%);
+      @include transition( color .3s ease-out 0);
     }
 
   }
@@ -114,7 +117,7 @@
   opacity: 0;
   position: absolute;
   background-color: lighten($brand-grey, 63%);
-  padding: 1.25rem 1.75rem;
+  padding: 1.25rem 1.5rem;
   text-align: left;
   width: 240px;
   top: 2rem;
@@ -143,6 +146,7 @@
     opacity: 0;
     @include transition( all .3s ease-in-out );
     padding: 0;
+    color: $brand-blue;
 
     a {
       padding: .5rem .25rem;
@@ -154,7 +158,7 @@
     }
 
     &:hover {
-      color: darken($brand-grey, 10%);
+      color: $brand-yellow;
     }
 
   }
