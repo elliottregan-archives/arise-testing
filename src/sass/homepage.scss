@@ -39,6 +39,7 @@
 
   .event-title {
     margin: 0;
+    font-size: 1.1em;
   }
 
   .event-date {
@@ -50,15 +51,16 @@
 
   .event-details {
     margin-bottom: .5rem;
+    padding-left: 2rem;
     line-height: 1.25;
   }
 
 }
 
 .card_layout {
-  // padding: 0 0 1rem 0;
+  margin: 2rem 0;
+  @include clearfix;
 }
-
 
 .card {
   background-color: white;
@@ -85,12 +87,30 @@
       }
       .card-image {
         @include span-columns( 4 );
-        height: 300px;
-        width: 300px;
+        height: 150px;
+        width: 200px;
       }
 
       .card-info {
         @include span-columns( 8 );
+      }
+
+      .card-title {
+        padding: $card-padding/1.5 $card-padding 0 0;
+
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .card-text {
+        padding-left: 0;
+      }
+
+      .read_more {
+        padding: 0 $card-padding 0 $card-padding;
+
       }
 
     }
@@ -112,7 +132,6 @@
     .card-title {
       color: white;
       font-size: 2em;
-      padding: 0;
     }
 
     .card-text {
@@ -131,15 +150,19 @@
 
   .card-title {
     color: $brand-grey;
-    font-size: 1.2em;
-    padding: $card-padding $card-padding 0;
-    line-height: 1.25;
+    font-size: 1.4em;
+    line-height: 1.1;
+    padding: $card-padding/1.5 $card-padding 0;
   }
 
   .card-text {
     padding: 0 $card-padding;
     color: lighten($brand-grey, 20%);
     font-size: .9em;
+    max-height: 2.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
   }
 
   .card-image {
@@ -157,7 +180,7 @@
     text-align: right;
     display: block;
     font-weight: 400;
-    padding: 0 $card-padding $card-padding;
+    padding: 0 $card-padding $card-padding/1.5;
 
     &:hover {
       color: darken($brand-yellow, 10%);

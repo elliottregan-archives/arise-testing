@@ -16,6 +16,14 @@ main {
   overflow: hidden;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
 .standard-content {
 
   @include media( $medium-screen-up ) {
@@ -51,9 +59,11 @@ main {
   height: 100%;
   width: 75%;
   background-color: $brand-grey;
+
   @include media( $medium-screen-up ) {
     display: none;
   }
+
   .header_links {
 
     position: relative;
@@ -64,6 +74,7 @@ main {
 
     .submenu {
       opacity: 1;
+      box-shadow: none;
     }
 
     li {
@@ -75,7 +86,8 @@ main {
         color: white;
         padding: 0;
         display: inline-block;
-        margin: 1rem 0;
+        margin: 1.2rem 0;
+        font-size: .9em;
       }
     }
 
@@ -91,7 +103,7 @@ main {
     position: static;
     padding: .5rem 1rem;
     border: none;
-    
+
     .header_link a {
       color: $brand-yellow;
       font-size: .8em;
@@ -171,7 +183,7 @@ main {
   }
 
   &.gradient-orange {
-    @include background-image(linear-gradient( tint($brand-yellow, 50%), $brand-yellow ));
+    @include background-image(linear-gradient( #ffb85f, #fa9e35 ));
     color: white;
     h2 {
       color: white;
@@ -249,7 +261,7 @@ $blockquote_border: 1px solid $brand-yellow;
   .attribution {
     font-size: .7em;
     text-transform: uppercase;
-    font-style: normal;
+    font-style: italic;
     margin: 1rem auto;
   }
 }

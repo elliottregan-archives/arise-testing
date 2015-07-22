@@ -42,3 +42,4 @@ $(document).ready ->
     e.preventDefault()
     $(this).siblings('.arrow_divider').toggleClass 'to_the_right'
     $('.slideaway_wrapper').toggleClass 'slide_away'
+    $('body').toggleClass 'no-scroll'

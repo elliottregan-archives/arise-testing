@@ -6,13 +6,13 @@ ol {
 
   &%default-ul {
     list-style-type: disc;
-    margin-bottom: $small-spacing;
+    margin: $small-spacing auto;
     padding-left: $base-spacing;
   }
 
   &%default-ol {
     list-style-type: decimal;
-    margin-bottom: $small-spacing;
+    margin: $small-spacing auto;
     padding-left: $base-spacing;
   }
 }
@@ -34,7 +34,7 @@ dl {
   @extend %default-ul;
   font-size: .9em;
   font-weight: 600;
-  margin: 0;
+  margin: 1rem auto;
 }
 
 .numbered {
@@ -42,4 +42,13 @@ dl {
   font-size: .9em;
   font-weight: 600;
   margin: 0;
+}
+
+.standard-content {
+  ol {
+    @extend %default-ol;
+  }
+  ul {
+    @extend %default-ul;
+  }
 }

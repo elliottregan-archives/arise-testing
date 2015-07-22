@@ -34,36 +34,42 @@ label {
 #{$all-text-inputs},
 select[multiple=multiple],
 textarea {
-  background-color: darken($brand-blue, 20%);
+  background-color: darken($brand-blue, 10%);
+  border: 2px solid darken($brand-blue, 10%);
   border-radius: 4px;
-  border: none;
   color: white;
   font-weight: 800;
-  text-align: center;
   box-sizing: border-box;
   font-family: $heading-font-family;
   text-transform: uppercase;
-  font-size: $base-font-size;
+  font-size: .9em;
   margin: $base-spacing / 2 0;
-  padding: $base-spacing / 3;
+  padding: $base-spacing / 8 $base-spacing/2;
   width: 100%;
-  border: 2px solid darken($brand-blue, 20%);
+  text-align: left;
 
   &::-webkit-input-placeholder {
-     color: white;
+    color: white;
+    opacity: .8;
+    text-align: center;
   }
 
   &:-moz-placeholder { /* Firefox 18- */
-     color: white;  
+    color: white;
+    opacity: .8;
+    text-align: center;
   }
 
   &::-moz-placeholder {  /* Firefox 19+ */
-     color: white;  
-     opacity: .8;
+    color: white;
+    opacity: .8;
+    text-align: center;
   }
 
-  &:-ms-input-placeholder {  
-     color: white;  
+  &:-ms-input-placeholder {
+    color: white;
+    opacity: .8;
+    text-align: center;
   }
 
   &::hover {
@@ -74,7 +80,6 @@ textarea {
   &:focus {
     border-color: $action-color;
     border: 2px solid darken($brand-blue, 10%);
-
   }
 
   &:disabled {

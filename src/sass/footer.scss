@@ -1,8 +1,9 @@
 .footer-header {
   color: white;
-  font-size: 1.4em;
+  font-size: 1.2em;
   text-transform: uppercase;
   margin: 0;
+  font-weight: 800;
 }
 
 .footer_links {
@@ -19,8 +20,12 @@
 }
 
 .footer_column {
+  @include span-columns( 10 );
+  @include shift(2);
+
   @include media($medium-screen-up) {
-    @include span-columns( 3 );
+    @include span-columns( 2.4 );
+    @include shift(0);
     display: block;
   }
   display: none;
@@ -38,23 +43,26 @@
 .contact_links a {
   text-transform: uppercase;
   color: white;
-  line-height: 1.5;
-  font-size: .9em;
+  line-height: 2;
+  font-size: .7em;
   font-weight: 800;
 
   i {
     color: darken($brand-blue, 15%);
-    font-size: 1.8em;
+    font-size: 2em;
     margin-right: .5rem;
+    line-height: 1.5;
+    vertical-align: middle;
   }
 }
 
 .content-container.copyright_info {
   background-color: darken($brand-blue, 15%);
+  padding: 2.5rem 1rem;
   text-transform: uppercase;
   color: white;
-  font-size: .9em;
-  font-weight: 600;
+  font-size: .7em;
+  font-weight: 800;
   letter-spacing: .1em;
   text-align: center;
 
@@ -65,9 +73,30 @@
   .social_links {
     border-bottom: none;
     font-size: 1.8em;
+    display: inline-block;
+  }
+}
 
-    a:hover {
-      color: lighten($brand-blue, 40%);
+.social_links {
+
+  a:hover {
+
+    .icon-twitter-bird {
+      color: #0fbbef;
+    }
+
+    .icon-youtube-play {
+      color: #ca393b;
+    }
+
+    .icon-facebook-1 {
+      color: #4e71a6;
+    }
+
+    .icon-instagram-filled {
+      color: #444444;
     }
   }
+
+
 }

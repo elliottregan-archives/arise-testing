@@ -4,7 +4,7 @@
 
   .submenu {
     background-color: transparentize(white, .1);
-    top: 2.9rem;
+    top: 2.5rem;
     border-color: white;
     box-shadow: none;
   }
@@ -24,6 +24,10 @@
 
   .header_links, .social_links {
     border-bottom: none;
+
+    li a {
+      font-size: 1em;
+    }
   }
 
   // .mobile_header .header_link a {
@@ -72,8 +76,9 @@
 .header_links, .social_links {
 
   display: inline-block;
-  padding: 1.5rem .25rem;
+  padding: 1.5rem .25rem 1rem;
   border-bottom: 2px solid lighten($brand-grey, 50%);
+  font-family: $heading-font-family;
 
   li {
     display: inline-block;
@@ -83,7 +88,8 @@
     a {
       color: inherit;
       text-transform: uppercase;
-      font-size: .9rem;
+      font-size: .75rem;
+      font-weight: 700;
       padding: 2rem .3rem;
 
     }
@@ -120,7 +126,7 @@
   padding: 1.25rem 1.5rem;
   text-align: left;
   width: 240px;
-  top: 2rem;
+  top: 2.4rem;
   left: -1rem;
   border: 1px solid lighten($brand-grey, 55%);
   box-shadow: 0 4px 12px transparentize(black, .85);
@@ -149,8 +155,9 @@
     color: $brand-blue;
 
     a {
-      padding: .5rem .25rem;
+      padding: .25rem .25rem;
       display: block;
+      font-size: .9em;
     }
 
     &.visible {
@@ -229,6 +236,11 @@
 .mobile_header {
 
   $header-height: 3rem;
+  // overflow: hidden;
+
+  &.active {
+    overflow: visible;
+  }
 
   @include media( $medium-screen-up ) {
     display: none;
@@ -290,7 +302,7 @@
     border-bottom: $header-height/2 solid;
 
     border-left: 0 solid;
-    border-right: 80px solid;
+    border-right: 60px solid;
   }
 
   .arrow_divider::before {
