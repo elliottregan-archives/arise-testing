@@ -254,7 +254,7 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
 
     $scope.filterOptions = [
       {
-        name: "Author/Presentor"
+        name: "Author"
         options: $scope.allAuthors
       }
       {

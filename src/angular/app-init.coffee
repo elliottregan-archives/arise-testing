@@ -1,5 +1,5 @@
 dependencies = [
-  # "ngAnimate"
+  "ngAnimate"
 ]
 
 mediaBrowser = angular.module("mediaBrowser", dependencies)

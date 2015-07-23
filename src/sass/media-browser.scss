@@ -107,8 +107,8 @@
 }
 
 %browser-list-item {
-  border: 1px solid whitesmoke;
-  border-bottom: none;
+  border-top: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
   @include padding(1rem);
   cursor: pointer;
 
@@ -138,10 +138,11 @@
   font-weight: 800;
   padding: .5rem;
   text-align: center;
-  border: 1px solid white;
+  border-right: 1px solid white;
   text-transform: uppercase;
   cursor: default;
   @include user-select( none);
+  position: relative;
 }
 
 .filter-column {
@@ -161,11 +162,16 @@
     line-height: 0;
     font-weight: 800;
     color: $brand-yellow;
+    min-height: 3rem;
     background-color: tint($brand-yellow, 85%);
-    
+
     [class^="icon-"] {
       margin-right: .5rem;
       font-size: 1.3em;
+    }
+
+    span {
+      @include clearfix;
     }
 
     &:hover {
@@ -274,7 +280,7 @@
 
 .dropdown-trigger {
   cursor: pointer;
-
+  z-index: 10;
   &:hover {
     background-color: lighten($brand-grey, 10%);
   }
@@ -291,44 +297,49 @@
   }
 }
 
+.dropdown-options {
+  @include transition(all ease-out .2s);
+  opacity: 1;
+  @include transform(translateY(0));
+
+  &.ng-hide {
+    opacity: 0;
+    @include transform(translateY(-10%));
+  }
+}
+
 .dropdown {
   position: relative;
+  margin-right: 1px;
 
   .dropdown-label {
     @extend %column-header;
     background-color: lighten($brand-grey, 60%);
-    border: 1px solid white;
     cursor: pointer;
     padding: .5rem 1rem 1rem;
     line-height: .25em;
+    font-family: $heading-font-family;
 
-    color: lighten($brand-grey, 20%);
+    color: lighten($brand-grey, 15%);
     text-transform: uppercase;
     font-weight: 800;
-
-    &::before {
-      content: "choose filter:";
-      font-size: .9em;
-      line-height: 1.8em;
-      display: block;
-      color: grey;
-      text-transform: none;
-      font-weight: 400;
-      color: lighten($brand-grey, 30%);
-    }
   }
 
   .dropdown-options {
     position: absolute;
     background-color: #fff;
     font-size: .9em;
-    border: 1px solid whitesmoke;
-    box-shadow: 0 4px 8px transparentize(black, .8);
+    border: 1px solid lighten($brand-grey, 30%);
+    width: 100%;
+
   }
 
   .dropdown-option {
-    border-bottom: 1px solid whitesmoke;
-    padding: 1rem;
+    border-bottom: 1px solid lighten($brand-grey, 30%);
+    padding: 1.5rem;
+    @include user-select;
+    &:last-of-type {
+      border: none;
+    }
   }
 }
-

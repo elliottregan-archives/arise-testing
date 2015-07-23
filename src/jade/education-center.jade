@@ -71,7 +71,7 @@ html
                 h4.column-header.dropdown-trigger(ng-click="toggleFilterDropdown()" ng-bind="filterName")
                 .dropdown
                   ul.dropdown-options(ng-show="sortDropdownVisible")
-                    li.dropdown-option(ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)")
+                    li.dropdown-option.dropdown-label(ng-repeat="filter in filterOptions" ng-bind="filter.name" ng-click="toggleFilterDropdown($index)")
                 ul.filter-list
                   li.filter-item(ng-click="filterMedia()" ng-class="{selected: mediaFilter==undefined}")
                     i(class="icon-th")
