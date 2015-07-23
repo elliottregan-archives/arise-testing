@@ -44,7 +44,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   @include media( new-breakpoint(max-width 790px 12) ) {
-    height: 3rem;
+    height: 4rem;
     background-color: white;
     z-index: 1;
     position: relative;
@@ -77,6 +77,7 @@
 
   display: inline-block;
   padding: 1.5rem .25rem 1rem;
+  margin-left: -4px;
   border-bottom: 2px solid lighten($brand-grey, 50%);
   font-family: $heading-font-family;
 
@@ -109,7 +110,7 @@
 }
 
 .social_links {
-  @include media( new-breakpoint(max-width 970px 12) ) {
+  @include media( new-breakpoint(max-width 850px 12) ) {
     display: none;
   };
 }
@@ -150,7 +151,7 @@
 
   li {
     opacity: 0;
-    @include transition( all .3s ease-in-out );
+    @include transition( all 0 ease-in-out );
     padding: 0;
     color: $brand-blue;
 

@@ -18,7 +18,8 @@
     font-family: serif;
     font-size: 2em;
     right: 2rem;
-
+    font-family: $special-font-family;
+    
     display: none;
     @include media($medium-screen-up) {
       display: block;

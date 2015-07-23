@@ -58,7 +58,7 @@
 
 .content-container.copyright_info {
   background-color: darken($brand-blue, 15%);
-  padding: 2.5rem 1rem;
+  padding: 2rem 1rem;
   text-transform: uppercase;
   color: white;
   font-size: .7em;
@@ -66,37 +66,47 @@
   letter-spacing: .1em;
   text-align: center;
 
-  a {
+  a, span {
     color: white;
+    vertical-align: middle;
   }
 
   .social_links {
     border-bottom: none;
-    font-size: 1.8em;
     display: inline-block;
+
+    a {
+      font-size: 2em;
+    }
   }
 }
 
 .social_links {
 
-  a:hover {
-
-    .icon-twitter-bird {
-      color: #0fbbef;
-    }
-
-    .icon-youtube-play {
-      color: #ca393b;
-    }
-
-    .icon-facebook-1 {
-      color: #4e71a6;
-    }
-
-    .icon-instagram-filled {
-      color: #444444;
-    }
+  a:hover i {
+    color: lighten($brand-blue, 10%);
+    // .icon-twitter-bird {
+    //   color: #0fbbef;
+    // }
+    //
+    // .icon-youtube-play {
+    //   color: #ca393b;
+    // }
+    //
+    // .icon-facebook-1 {
+    //   color: #4e71a6;
+    // }
+    //
+    // .icon-instagram-filled {
+    //   color: #444444;
+    // }
   }
 
+}
 
+.ecfa-footer-logo {
+  height: 3em;
+  margin-left: 1rem;
+  display: inline-block;
+  vertical-align: middle;
 }

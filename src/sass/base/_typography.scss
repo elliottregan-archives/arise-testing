@@ -72,7 +72,8 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: .9em;
 
   &.centered {
     text-align: center;
@@ -119,4 +120,34 @@ blockquote {
   font-weight: 600;
   margin: 2rem 2rem;
   color: $brand-yellow;
+}
+
+$blockquote_border: 1px solid $brand-yellow;
+
+.block_quote {
+  color: $brand-yellow;
+
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5em;
+  // @include span-columns( 6 );
+  // @include shift(3);
+
+  .quote {
+    border-top: $blockquote_border;
+    border-bottom: $blockquote_border;
+    padding: 2rem 0;
+
+    @include media( $medium-screen-up) {
+      margin: 0 10%;
+    }
+  }
+
+  .attribution {
+    font-size: .7em;
+    text-transform: uppercase;
+    font-style: italic;
+    margin: 1rem auto;
+  }
 }

@@ -1,8 +1,13 @@
+Array::unique = ->
+  output = {}
+  output[@[key]] = @[key] for key in [0...@length]
+  value for key, value of output
+
 mediaBrowser.controller 'mediaBrowserController', ($scope) ->
 
 
   init = () ->
-    console.log("index!")
+
     $scope.mediaLibrary = [
       {
         title: 'amet ullamco velit velit'
@@ -222,12 +227,19 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
       }
     ]
 
+    $scope.allAuthors = []
+
     angular.forEach $scope.mediaLibrary, (value, key) ->
       if value.category == 'Spiritual Growth'
         value.categoryIcon = 'leaf'
+      if value.author
+        $scope.allAuthors.push {text: value.author}
+    # $scope.allAuthors = $scope.allAuthors.unique()
 
     $scope.search = (item) ->
-      conditions = item.title.indexOf($scope.searchParameter)!=-1 && (item.category.indexOf($scope.mediaFilter)!=-1 || $scope.mediaFilter==undefined)
+      filterSelected = (item.category.indexOf($scope.mediaFilter)!=-1 || item.mediaType.indexOf($scope.mediaFilter)!=-1 || item.author.indexOf($scope.mediaFilter)!=-1)
+      filterNotSelected = $scope.mediaFilter==undefined
+      conditions = item.title.indexOf($scope.searchParameter)!=-1 && filterSelected || filterNotSelected
       if conditions
         return true
       return false
@@ -236,13 +248,14 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
       $scope.mediaIsFiltered = false
 
     $scope.filterMedia = (filterParameter) ->
+      console.log filterParameter
       $scope.mediaFilter = filterParameter
       $scope.mediaIsFiltered = true
 
     $scope.filterOptions = [
       {
         name: "Author/Presentor"
-        options: ["Firstname Lastname","Firstname2 Lastname2"]
+        options: $scope.allAuthors
       }
       {
         name: "Category"
@@ -263,6 +276,6 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
       if filterCategoryIndex != undefined
         $scope.filterCategories = $scope.filterOptions[filterCategoryIndex].options
         $scope.filterName = $scope.filterOptions[filterCategoryIndex].name
-      
+
 
   init();
