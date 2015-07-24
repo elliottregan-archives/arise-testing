@@ -50,17 +50,3 @@ dl {
   font-weight: 600;
   margin: 0;
 }
-
-.standard-content {
-  ol {
-    @extend %default-ol;
-    font-weight: 300;
-  }
-  ul {
-    @extend %default-ul;
-    font-weight: 300;
-  }
-  li {
-    margin-bottom: .5rem;
-  }
-}

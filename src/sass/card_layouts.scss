@@ -1,0 +1,175 @@
+ul.card_layout {
+  list-style: none;
+  padding: 0;
+
+  ul.social_links {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.speaker-card {
+  @include row;
+  margin-bottom: 2rem;
+
+  .card-image {
+    margin: 0;
+    img {
+      width: 100%;
+    }
+
+    @include media($medium-screen-up) {
+      float: left;
+      @include size(250px);
+    };
+  }
+
+  .card-header {
+    border-bottom: 2px lighten($brand-blue, 40%) solid;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    color: white;
+  }
+
+  .social_links {
+    float: right;
+    border: none;
+    padding: .5rem 0;
+
+    a i {
+      color: white;
+    }
+
+    a:hover i {
+      color: white;
+      opacity: .85;
+    }
+  }
+
+  .card-info {
+    padding: 1rem 2rem;
+    background-color: $brand-blue;
+    color: white;
+    margin: 0;
+    @include clearfix;
+
+    .read_more {
+      color: tint($brand-blue, 60%);
+      float: right;
+    }
+
+    @include media($medium-screen-up) {
+      margin-left: 250px;
+      padding: 2rem 4rem;
+      height: 250px;
+    };
+  }
+}
+
+.contact-card {
+
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @include clearfix;
+
+  @include media( $medium-screen-up ) {
+    background-color: $brand-blue;
+    position: relative;
+  }
+
+  .contact-pic {
+
+    @include media( $medium-screen-up ) {
+      @include span-columns( 4 of 6, inline-block );
+      height: 500px;
+      width: 500px;
+
+    }
+
+    @include span-columns(12, block );
+    overflow: hidden;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .contact-text {
+    @include span-columns(12, block );
+    display: none;
+
+    @include media( $medium-screen-up ) {
+      @include span-columns( 2 of 6, inline-block );
+      position: absolute;
+      vertical-align: bottom;
+      bottom: 1rem;
+      right: 1rem;
+      text-align: bottom;
+
+    }
+  }
+
+  .social_links {
+    border: none;
+    padding: .5rem 0;
+
+    .header_link {
+      margin-right: -.5em;
+
+    }
+
+    a i {
+      color: white;
+      font-size: 1.5em;
+    }
+
+    a:hover i {
+      color: white;
+      opacity: .85;
+    }
+  }
+
+
+  .contact-name {
+
+    color: white;
+    padding: 1rem 0;
+    @include media( $medium-screen-up ) {
+
+      color: white;
+      font-weight: 400;
+      word-spacing: 1000px;
+      font-size: 1.5em;
+      line-height: 1;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid tint($brand-blue, 40%);
+    }
+  }
+
+  .connect_links {
+    display: none;
+
+    @include media( $medium-screen-up ) {
+      display: block;
+    }
+
+    padding: .5rem 0;
+
+    .request {
+      position: relative;
+      font-size: .9em;
+
+      .arrow_button {
+        position: absolute;
+        bottom: -.75rem;
+        right: -2rem;
+      }
+
+    }
+
+  }
+}

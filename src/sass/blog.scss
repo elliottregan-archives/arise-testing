@@ -17,6 +17,8 @@ p.intro-text {
 .post-title-group {
   margin-bottom: 1rem;
 
+  h1 {margin-bottom: 1rem;}
+
   .post-meta {
     font-size: .8em;
     font-style: italic;
@@ -24,7 +26,7 @@ p.intro-text {
   }
 }
 
-.blog-content {
+.blog-list {
   @include media( $medium-screen-up ) {
     @include span-columns( 8 );
   };
@@ -34,7 +36,7 @@ p.intro-text {
 .post-footer {
 
   .author-blurb {
-    
+
     .author-pic {
       float: left;
     }
@@ -54,9 +56,10 @@ p.intro-text {
 .share_links {
   @include clearfix;
   margin: 1rem 0;
-  
+
   li, ul {
     display: inline-block;
+    border: none;
   }
 
   h4 {
@@ -84,11 +87,20 @@ p.intro-text {
 .blog-sidebar {
 
   display: none;
+  margin-top: 7.5rem;
+
+  &.post-sidebar {
+
+  margin-top: 0;
+  }
 
   @include media( $medium-screen-up ) {
+
+
     float: right;
     @include span-columns( 3 );
     @include shift(1);
+    font-size: .9em;
     background-color: lighten($brand-grey, 60%);
     padding: 1rem;
     border-radius: 10px;
@@ -98,16 +110,21 @@ p.intro-text {
   h4 {
     margin-bottom: .5rem;
     text-transform: uppercase;
-
+    color: lighten(black, 30%);
+    font-weight: 700;
     &:not(:first-of-type) {
       margin-top: 1rem;
     }
   }
 
   a {
-    color: lighten($brand-grey, 20%);
+    color: lighten($brand-grey, 40%);
     padding: .25rem;
+    padding-left: 1rem;
+    font-size: .9em;
+
     @include ellipsis(100%);
+
     &:hover {
       color: $brand-blue;
     }
@@ -120,15 +137,15 @@ p.intro-text {
 }
 
 .image_divider {
-  
+
   width: 100%;
   @include media($medium-screen-up) {
-    
+
     margin: 1rem 0;
-    
+
     // @include span-columns( 8 );
     // @include shift(2);
-    
+
     &.left {
       float: left;
       margin: .5rem 1rem .5rem 0;
@@ -144,5 +161,29 @@ p.intro-text {
       float: none;
     }
 
+  }
+}
+
+.card.horizontal.blog-card {
+
+  margin-bottom: 0;
+
+  .card-title {
+    text-transform: none;
+    font-size: 1.1em;
+    padding-left: 1rem;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .card-text {
+    max-height: 4.5em;
+    padding-left: 1rem;
+  }
+
+  .read_more {
+    font-size: .9em;
   }
 }

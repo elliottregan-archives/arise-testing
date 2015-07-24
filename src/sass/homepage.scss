@@ -63,66 +63,6 @@
   @include clearfix;
 }
 
-.speaker-card {
-  @include row;
-  margin-bottom: 2rem;
-
-  .card-image {
-    margin: 0;
-    img {
-      width: 100%;
-    }
-
-    @include media($medium-screen-up) {
-      float: left;
-      @include size(250px);
-    };
-  }
-
-  .card-header {
-    border-bottom: 2px lighten($brand-blue, 40%) solid;
-    margin-bottom: 1rem;
-  }
-
-  .card-title {
-    color: white;
-  }
-
-  .social_links {
-    float: right;
-    border: none;
-    padding: .5rem 0;
-
-    a i {
-      color: white;
-    }
-
-    a:hover i {
-      color: white;
-      opacity: .85;
-    }
-  }
-
-  .card-info {
-    padding: 1rem 2rem;
-    background-color: $brand-blue;
-    color: white;
-    margin: 0;
-    @include clearfix;
-
-    .read_more {
-      color: tint($brand-blue, 60%);
-      float: right;
-    }
-
-    @include media($medium-screen-up) {
-      margin-left: 250px;
-      padding: 2rem 4rem;
-      height: 250px;
-    };
-  }
-}
-
 .card {
   background-color: white;
   box-shadow: 0 4px 8px transparentize(#000, .75);

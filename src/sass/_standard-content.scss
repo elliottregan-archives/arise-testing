@@ -51,4 +51,43 @@
     }
   }
 
+  ol {
+    @extend %default-ol;
+    font-weight: 300;
+  }
+  ul {
+    @extend %default-ul;
+    font-weight: 300;
+  }
+  li {
+    margin-bottom: .5rem;
+  }
+
+
+}
+
+.blog-list {
+  blockquote {
+    border-top: $blockquote_border;
+    border-bottom: $blockquote_border;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-weight: 400;
+
+    @include media( $medium-screen-up) {
+      margin: 2rem 10%;
+    }
+  }
+
+  ol {
+    @extend %default-ol;
+    font-weight: 300;
+  }
+  ul {
+    @extend %default-ul;
+    font-weight: 300;
+  }
+  li {
+    margin-bottom: .5rem;
+  }
 }

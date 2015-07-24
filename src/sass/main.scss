@@ -12,6 +12,7 @@ $gutter: 30px;
 @import 'store';
 @import 'standard-content';
 @import 'staff';
+@import 'card_layouts';
 
 main {
   // margin-top: 4rem;
@@ -123,6 +124,7 @@ body {
     background-color: #eaeaea;
     background-position: bottom;
     background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     min-height: 300px;
     margin-bottom: 0;
@@ -219,133 +221,4 @@ body {
     @include span-columns( 8 );
     @include shift(2);
   }
-}
-
-
-
-.contact-card {
-
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  @include clearfix;
-
-  @include media( $medium-screen-up ) {
-    @include outer-container(80%);
-    background-color: $brand-blue;
-    position: relative;
-
-  }
-
-  .contact-pic {
-
-    @include media( $medium-screen-up ) {
-      @include span-columns( 4 of 6, inline-block );
-      height: 500px;
-      width: 500px;
-
-    }
-
-    @include span-columns(12, block );
-    overflow: hidden;
-
-    img {
-      height: 100%;
-    }
-  }
-
-  .contact-text {
-    @include span-columns(12, block );
-    display: none;
-
-    @include media( $medium-screen-up ) {
-      @include span-columns( 2 of 6, inline-block );
-      position: absolute;
-      vertical-align: bottom;
-      bottom: 1rem;
-      right: 1rem;
-      text-align: bottom;
-
-    }
-  }
-
-  .contact-name {
-
-    padding: 1rem 0;
-    color: white;
-    padding: 1rem;
-    @include media( $medium-screen-up ) {
-
-      color: white;
-      font-weight: 400;
-      word-spacing: 1000px;
-      font-size: 1.5em;
-      line-height: 1;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid tint($brand-blue, 40%);
-    }
-  }
-
-  .connect_links {
-      display: none;
-
-    @include media( $medium-screen-up ) {
-      display: block;
-    }
-
-    padding: .5rem 0;
-
-    li {
-      display: inline-block;
-    }
-
-    .request {
-      position: relative;
-
-      .arrow_button {
-        position: absolute;
-        top: -2.5rem;
-        left: 1rem;
-      }
-
-    }
-
-  }
-}
-
-.arrow_button {
-  width: 150px;
-  height: 50px;
-  background-color: darken($brand-blue, 20%);
-  position: relative;
-  margin-left: 40px;
-  border-radius: 0px;
-  box-shadow: 3px 2px 0 transparentize(black, .8);
-}
-
-.arrow_button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -9px;
-  border-style: solid;
-  border-width: 25px 9px 25px 0;
-  border-color: transparent darken($brand-blue, 20%) transparent transparent;
-}
-
-.arrow_button > a {
-  display: inline;
-  text-decoration: none;
-  text-align: center;
-  color: #fff;
-  padding: 0;
-}
-
-.arrow_button:hover {
-  background-color: lightblue;
-}
-
-.arrow_button:hover:before {
-  border-right-color: lightblue;
 }

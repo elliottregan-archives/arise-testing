@@ -120,3 +120,39 @@ button {
     background-image: url("../images/download-arrow.svg");
   }
 }
+
+.arrow_button {
+  width: 140px;
+  height: 45px;
+  background-color: darken($brand-blue, 10%);
+  position: relative;
+  margin-left: 40px;
+  border-radius: 0px;
+  box-shadow: 3px 2px 0 transparentize(black, .8);
+}
+
+.arrow_button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -9px;
+  border-style: solid;
+  border-width: 25px 9px 25px 0;
+  border-color: transparent darken($brand-blue, 10%) transparent transparent;
+}
+
+.arrow_button > a {
+  display: inline;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  padding: 0;
+}
+
+.arrow_button:hover {
+  background-color: darken($brand-blue, 20%);
+}
+
+.arrow_button:hover:before {
+  border-right-color: darken($brand-blue, 20%);
+}

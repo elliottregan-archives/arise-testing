@@ -13,20 +13,20 @@ html
       main
         .content-container
           .content
-            article.blog-content
+            article.blog-list
               h1 Blog
               h2.section_header Featured
               ul.card_layout
                 li
-                  .card.horizontal
+                  .card.horizontal.blog-card
                     .card-image
                       img(src="http://stevensegallery.com/300/220")
                     h3.card-title Proin ornare luctus massa, id hendrerit tellus auctor
                     p.card-text Proin nibh arcu, consectetur a odio nec, aliquet suscipit enim. Suspendisse aliquam, libero ac tincidunt suscipit, lacus quam commodo odio, nec faucibus arcu ante in odio. Proin ornare luctus massa, id hendrerit tellus auctor eu. Nullam eget egestas orci.
-                    a(href="#").read_more Read More
+                    a(href="#").read_more Read Mores
                   include _share_links.jade
                 li
-                  .card.horizontal
+                  .card.horizontal.blog-card
                     .card-image
                       img(src="http://stevensegallery.com/400/300")
                     h3.card-title Proin ornare luctus massa, id hendrerit tellus auctor
@@ -34,7 +34,7 @@ html
                     a(href="#").read_more Read More
                   include _share_links.jade
                 li
-                  .card.horizontal
+                  .card.horizontal.blog-card
                     .card-image
                       img(src="http://stevensegallery.com/600/450")
                     h3.card-title Proin ornare luctus massa, id hendrerit tellus auctor
@@ -42,11 +42,6 @@ html
                     a(href="#").read_more Read More
                   include _share_links.jade
             nav.blog-sidebar
-              h4 Recent
-              ul
-                li: a(href="#") Title of Another Blog Post
-                li: a(href="#") Title of Another Blog Post
-                li: a(href="#") Title of Another Blog Post
               h4 Categories
               ul
                 li: a(href="#") Category 1
