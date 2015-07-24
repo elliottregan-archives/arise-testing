@@ -19,7 +19,7 @@
     font-size: 2em;
     right: 2rem;
     font-family: $special-font-family;
-    
+
     display: none;
     @include media($medium-screen-up) {
       display: block;
@@ -63,6 +63,58 @@
   @include clearfix;
 }
 
+.speaker-card {
+  @include row;
+  margin-bottom: 2rem;
+
+  .card-image {
+    @include size(250px);
+    margin: 0;
+    float: left;
+    img {
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    border-bottom: 2px lighten($brand-blue, 40%) solid;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    color: white;
+  }
+
+  .social_links {
+    float: right;
+    border: none;
+    padding: .5rem 0;
+
+    a i {
+      color: white;
+    }
+
+    a:hover i {
+      color: white;
+      opacity: .85;
+    }
+  }
+
+  .card-info {
+    padding: 2rem 4rem;
+    background-color: $brand-blue;
+    color: white;
+    margin: 0;
+    height: 250px;
+    margin-left: 250px;
+
+    .read_more {
+      color: tint($brand-blue, 60%);
+      float: right;
+    }
+  }
+}
+
 .card {
   background-color: white;
   box-shadow: 0 4px 8px transparentize(#000, .75);
@@ -76,6 +128,8 @@
     @include span-columns( 4 );
 
   }
+
+
 
   &.horizontal {
     @include media($medium-screen-up) {
