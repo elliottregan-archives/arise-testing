@@ -68,12 +68,15 @@
   margin-bottom: 2rem;
 
   .card-image {
-    @include size(250px);
     margin: 0;
-    float: left;
     img {
       width: 100%;
     }
+
+    @include media($medium-screen-up) {
+      float: left;
+      @include size(250px);
+    };
   }
 
   .card-header {
@@ -101,17 +104,22 @@
   }
 
   .card-info {
-    padding: 2rem 4rem;
+    padding: 1rem 2rem;
     background-color: $brand-blue;
     color: white;
     margin: 0;
-    height: 250px;
-    margin-left: 250px;
+    @include clearfix;
 
     .read_more {
       color: tint($brand-blue, 60%);
       float: right;
     }
+
+    @include media($medium-screen-up) {
+      margin-left: 250px;
+      padding: 2rem 4rem;
+      height: 250px;
+    };
   }
 }
 
