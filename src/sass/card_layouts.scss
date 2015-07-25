@@ -74,51 +74,90 @@ ul.card_layout {
   margin-top: 2rem;
   margin-bottom: 2rem;
   @include clearfix;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  background-color: $brand-blue;
+  position: relative;
 
   @include media( $medium-screen-up ) {
-    background-color: $brand-blue;
-    position: relative;
+    max-width: inherit;
   }
 
   .contact-pic {
+    position: relative;
+    width: 100%;
+    margin: 0;
 
     @include media( $medium-screen-up ) {
-      @include span-columns( 4 of 6, inline-block );
-      height: 500px;
       width: 500px;
-
+      height: 500px;
+      max-width: auto;
     }
 
-    @include span-columns(12, block );
+    @include media( new-breakpoint(max-width rem(900) 12) ) {
+      width: 340px;
+      height: 340px;
+    }
+
+    @include media( new-breakpoint(max-width rem(736) 12) ) {
+      max-width: 480px
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+
     overflow: hidden;
 
     img {
-      height: 100%;
+      width: 100%;
+      position: absolute;
     }
   }
 
   .contact-text {
-    @include span-columns(12, block );
-    display: none;
+    // display: none;
+    width: 100%;
+    left: 0;
+    bottom: 1rem;
+    display: block;
+    padding: 0;
+    position: static;
 
-    @include media( $medium-screen-up ) {
-      @include span-columns( 2 of 6, inline-block );
-      position: absolute;
-      vertical-align: bottom;
+
+    @include media( new-breakpoint(max-width rem(900) 12) ) {
+      width: 100%;
+      padding-left: 360px;
+      padding-right: 3rem;
+      left: 0;
       bottom: 1rem;
-      right: 1rem;
-      text-align: bottom;
+      position: absolute;
 
+    }
+
+    @include media( new-breakpoint(min-width rem(900) 12) ) {
+      padding-left: 520px;
+      padding-right: 3rem;
+      display: block;
+      position: absolute;
+      bottom: 1rem;
+    }
+
+    @include media( new-breakpoint(max-width rem(736) 12) ) {
+      max-width: 320px;
+      position: static;
+      margin: 0;
+      padding: 0;
     }
   }
 
   .social_links {
     border: none;
     padding: .5rem 0;
+    display: block;
 
     .header_link {
       margin-right: -.5em;
-
     }
 
     a i {
@@ -140,22 +179,17 @@ ul.card_layout {
     @include media( $medium-screen-up ) {
 
       color: white;
-      font-weight: 400;
+      font-weight: 300;
       word-spacing: 1000px;
       font-size: 1.5em;
       line-height: 1;
       padding-bottom: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
       border-bottom: 2px solid tint($brand-blue, 40%);
     }
   }
 
   .connect_links {
-    display: none;
-
-    @include media( $medium-screen-up ) {
-      display: block;
-    }
 
     padding: .5rem 0;
 
@@ -164,9 +198,10 @@ ul.card_layout {
       font-size: .9em;
 
       .arrow_button {
+        border-radius: 0;
         position: absolute;
         bottom: -.75rem;
-        right: -2rem;
+        right: -3rem;
       }
 
     }
