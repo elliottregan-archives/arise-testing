@@ -1,5 +1,14 @@
 $(document).ready ->
 
+  $('.expander-trigger').click ->
+    expander = $(this)
+    expander.toggleClass 'visuallyHidden'
+
+    setTimeout (->
+      expander.toggleClass 'expander-hidden'
+    ), 40
+
+
   menuTimeouts = []
 
   $(':not(.mobile_sidebar) .has_submenu').on {

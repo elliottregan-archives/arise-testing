@@ -1,0 +1,35 @@
+.testimonials-list {
+  margin: 2rem 0;
+}
+
+.testimonial {
+  @include clearfix;
+  margin-bottom: 3rem;
+}
+
+.testimonial-image {
+  float: left;
+  border-right: 1.25rem solid $brand-yellow;
+  margin-right: 1.25rem;
+}
+
+$testimonial-font-color: grey;
+
+.testimonial-text {
+  vertical-align: middle;
+  font-style: italic;
+  color: $testimonial-font-color;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: .8em;
+  color: $testimonial-font-color;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.desc {
+  font-size: .75em;
+  color: $testimonial-font-color;
+}

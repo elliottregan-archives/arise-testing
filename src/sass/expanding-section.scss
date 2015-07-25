@@ -1,0 +1,93 @@
+.expander {
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 70%;
+
+  border-bottom: 2px solid whitesmoke;
+
+  &:first-of-type {
+    border-top: 1px solid whitesmoke;
+  }
+
+  .expander-trigger {
+    @include user-select(none);
+    color: $brand-blue;
+    cursor: pointer;
+    display: block;
+    font-size: .9em;
+    font-weight: 800;
+    padding-bottom: $expander-toggle-size/2 ;
+    padding-top: $expander-toggle-size/2 ;
+    text-decoration: none;
+
+    background-color: $brand-blue;
+    color: white;
+    padding-left: 1rem;
+    margin-bottom: .5rem;
+    position: relative;
+    height: 2.5em;
+    box-shadow: 2px 2px 0 lightgrey;
+    line-height: 1.5em;
+
+    &::before {
+      font-size: $expander-arrow-width;
+      content: "\25BC";
+      margin-right: 0.5em;
+    }
+
+    &::after {
+      @include triangle(2.5em 10px, $brand-blue, left);
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 0;
+    }
+
+  }
+
+  .expander-content {
+    max-height: 1000px;
+    opacity: 1
+  }
+
+  .expander-content p {
+    border-left: 4px solid #B8B8B8;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .visuallyHidden {
+    display: block;
+  }
+
+  .expander-hidden {
+    background-color: transparent;
+    color: $brand-blue;
+    box-shadow: none;
+
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BA";
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
