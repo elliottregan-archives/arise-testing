@@ -74,7 +74,7 @@ ul.card_layout {
   margin-top: 2rem;
   margin-bottom: 2rem;
   @include clearfix;
-  max-width: 480px;
+  max-width: 288px;
   margin: 0 auto 2rem;
   background-color: $brand-blue;
   position: relative;
@@ -99,10 +99,9 @@ ul.card_layout {
       height: 340px;
     }
 
-    @include media( new-breakpoint(max-width rem(736) 12) ) {
-      max-width: 480px
-      width: 100%;
-      height: auto;
+    @include media( new-breakpoint(max-width rem(730) 12) ) {
+      max-width: 288px;
+      height: 288px;
       margin: 0;
       padding: 0;
     }
@@ -124,26 +123,25 @@ ul.card_layout {
     padding: 0;
     position: static;
 
-
     @include media( new-breakpoint(max-width rem(900) 12) ) {
-      width: 100%;
       padding-left: 360px;
       padding-right: 3rem;
-      left: 0;
       bottom: 1rem;
       position: absolute;
 
     }
 
     @include media( new-breakpoint(min-width rem(900) 12) ) {
+      width: 100%;
       padding-left: 520px;
       padding-right: 3rem;
       display: block;
-      position: absolute;
       bottom: 1rem;
+      left: 0;
+    position: absolute;
     }
 
-    @include media( new-breakpoint(max-width rem(736) 12) ) {
+    @include media( new-breakpoint(max-width rem(720) 12) ) {
       max-width: 320px;
       position: static;
       margin: 0;
@@ -175,9 +173,12 @@ ul.card_layout {
   .contact-name {
 
     color: white;
-    padding: 1rem 0;
+    padding: .5rem 0;
+    margin-left: 1rem;
+    border-bottom: 2px solid tint($brand-blue, 40%);
     @include media( $medium-screen-up ) {
 
+      margin-left: 0;
       color: white;
       font-weight: 300;
       word-spacing: 1000px;
@@ -185,14 +186,20 @@ ul.card_layout {
       line-height: 1;
       padding-bottom: 1rem;
       margin-bottom: .5rem;
-      border-bottom: 2px solid tint($brand-blue, 40%);
+    }
+
+    @include media( new-breakpoint(max-width rem(720) 12) ) {
+      // padding: 0 1rem;
     }
   }
 
   .connect_links {
 
     padding: .5rem 0;
-
+    @include media( new-breakpoint(max-width rem(720) 12) ) {
+      padding: 0 1rem;
+      margin: 0;
+    }
     .request {
       position: relative;
       font-size: .9em;
@@ -202,6 +209,21 @@ ul.card_layout {
         position: absolute;
         bottom: -.75rem;
         right: -3rem;
+
+        @include media( new-breakpoint(max-width rem(720) 12) ) {
+          font-size: .8em;
+          padding: .25rem;
+          height: 30px;
+          width: 110px;
+          right: -1.25rem;
+          bottom: 0;
+
+          &:before {
+            border-width: 15px 9px 15px 0;
+          }
+        }
+
+
       }
 
     }
