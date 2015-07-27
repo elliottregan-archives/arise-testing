@@ -19,6 +19,7 @@
     font-size: 2em;
     right: 2rem;
     font-family: $special-font-family;
+    line-height: $base-line-height;
 
     display: none;
     @include media($medium-screen-up) {

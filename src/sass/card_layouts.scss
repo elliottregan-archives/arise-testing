@@ -65,6 +65,10 @@ ul.card_layout {
     .read_more {
       color: tint($brand-blue, 60%);
       float: right;
+
+      &:hover {
+        color: white;
+      }
     }
 
     @include media($medium-screen-up) {
