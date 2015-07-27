@@ -131,6 +131,31 @@ body {
     min-height: 300px;
     margin-bottom: 0;
 
+    &.with_banner {
+      margin-bottom: 125px;
+
+      img {
+        display: block;
+        margin: 90px auto -154px;
+        width:900px;
+        height: auto;
+        max-width: 100%;
+      }
+
+      @media (max-width: 940px) {
+        .content-container.hero_image.with_banner {
+                margin-bottom: 0;
+                height: auto;
+                min-height: 0;
+                padding: 0;
+            }
+        .content-container.hero_image.with_banner img {
+            margin: 0 auto;
+        }
+      }
+
+    }
+
     &.sunset_girl {
       background-image: url("../images/sunset-girl.jpg");
       background-size: 200%;

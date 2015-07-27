@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    include _head.jade
+    script(src='js/app.js')
+    script(src='js/controllers.js')
+  body
+    nav.mobile_sidebar
+      include _mobile_nav.jade
+    .slideaway_wrapper
+      header
+        include _header.jade
+      main
+        .content-container
+          .content
+            form
+              
+              fieldset
+                label(for="fname") First Name
+                input(type"text" id="fname" name="fname")
+                label(for="lname") Last Name
+                input(type"text" id="lname" name="lname")
+                label(for="title") Your Title/Position
+                input(type"text" id="title" name="title")
+                  
+              fieldset
+                label(for="address") Address
+                input(type"text" id="address" name="address")
+                label(for="city") City
+                input(type"text" id="city" name="city")
+                label(for="state") State
+                input(type"text" id="state" name="state")
+                label(for="zip") Zip
+                input(type"text" id="zip" name="zip")
+                label(for="email") Email
+                input(type"email" id="email" name="email")
+                label(for="phone") Phone
+                input(type"num" id="phone" name="phone")
+              fieldset
+                
+                label(for="pam") Pam Kanaly
+                input(type"checkbox" id="pam" name="pam")
+                label(for="pam") Shelley Pulliam
+                input(type"checkbox" id="shelley" name="shelley")
+                label(for="pam") Pam Kanaly
+                input(type"checkbox" id="pam" name="pam")
+      footer
+        include _footer.jade

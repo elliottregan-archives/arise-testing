@@ -8,6 +8,8 @@ p.intro-text {
 }
 
 .blog-text {
+  line-height: $base-line-height;
+
   @include media($medium-screen-up) {
     padding-left: flex-grid( 2 ) + flex-gutter();
     padding-right: flex-grid( 2 ) + flex-gutter();

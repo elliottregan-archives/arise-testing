@@ -241,8 +241,18 @@ mediaBrowser.controller 'mediaBrowserController', ($scope, $http, $window) ->
     $scope.allAuthors = []
 
     angular.forEach $scope.mediaLibrary, (value, key) ->
+      if value.category == 'Parenting'
+        value.categoryIcon = 'user'
       if value.category == 'Spiritual Growth'
         value.categoryIcon = 'leaf'
+      if value.category == 'Emotional Wellness'
+        value.categoryIcon = 'sun'
+      if value.category == 'Home Life'
+        value.categoryIcon = 'home'
+      if value.category == 'Finances'
+        value.categoryIcon = 'calculator'
+      if value.category == 'Health'
+        value.categoryIcon = 'heart'
       if value.author
         $scope.allAuthors.push {text: value.author}
     # $scope.allAuthors = $scope.allAuthors.unique()

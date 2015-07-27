@@ -1,6 +1,7 @@
 ul.card_layout {
   list-style: none;
   padding: 0;
+  line-height: $base-line-height;
 
   ul.social_links {
     list-style: none;
@@ -12,8 +13,14 @@ ul.card_layout {
   @include row;
   margin-bottom: 2rem;
 
+
+  .card-text {
+    line-height: $base-line-height;
+
+  }
   .card-image {
     margin: 0;
+
     img {
       width: 100%;
     }
@@ -122,6 +129,7 @@ ul.card_layout {
     display: block;
     padding: 0;
     position: static;
+    line-height: $base-line-height;
 
     @include media( new-breakpoint(max-width rem(900) 12) ) {
       padding-left: 360px;

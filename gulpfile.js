@@ -117,14 +117,15 @@ gulp.task('angular-directives', function() {
 gulp.task('bower', function() {
   gulp.src([
     'bower_components/jquery/dist/jquery.min.js',
-    'bower_components/angular/angular.js',
-    "bower_components/angular-animate/angular-animate.js",
+    'bower_components/angular/angular.min.js',
+    "bower_components/angular-animate/angular-animate.min.js",
     ])
     .pipe(concat('bower_components.js'))
     .pipe(gulp.dest(DEST+'/js'));
   gulp.src([
     'bower_components/jquery/dist/jquery.min.map',
     'bower_components/angular/angular.min.js.map',
+    'bower_components/angular-animate/angular-animate.min.js.map',
     ])
     .pipe(gulp.dest(DEST+'/js'));
 });
