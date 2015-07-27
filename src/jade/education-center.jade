@@ -83,7 +83,7 @@ html
                 h4.column-header Resource
                 ul.media-list
                   li.media-item.MOBILE-ONLY(ng-click="backToFilter()") <- back
-                  li.media-item(ng-repeat="media in mediaLibrary | filter : search ")
+                  li.media-item(ng-repeat="media in mediaLibrary | filter : search " ng-click="openMedia(media.mediaURL)")
                     i.media-icon(class="icon-{{media.mediaIcon}}")
                     i.category-icon(class="icon-{{media.categoryIcon}}")
                     h1.title(ng-bind="media.title")

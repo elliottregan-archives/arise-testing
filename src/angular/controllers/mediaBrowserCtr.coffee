@@ -3,8 +3,7 @@ Array::unique = ->
   output[@[key]] = @[key] for key in [0...@length]
   value for key, value of output
 
-mediaBrowser.controller 'mediaBrowserController', ($scope) ->
-
+mediaBrowser.controller 'mediaBrowserController', ($scope, $http, $window) ->
 
   init = () ->
 
@@ -183,6 +182,14 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
     #   }
     # ]
 
+    # THIS IS THE RESOURCE REQUEST!
+    $http.get('/something')
+      .success (data)->
+        console.log "success!", data
+        $scope.mediaLibrary = data
+      .error (data)->
+        console.log "error!", data, status
+
     $scope.sortDropdownVisible = false
     $scope.mediaIsFiltered = false
 
@@ -209,6 +216,10 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
       {
         text: 'Finances'
         icon: 'calculator'
+      }
+      {
+        text: 'Health'
+        icon: 'heart'
       }
     ]
 
@@ -277,5 +288,8 @@ mediaBrowser.controller 'mediaBrowserController', ($scope) ->
         $scope.filterCategories = $scope.filterOptions[filterCategoryIndex].options
         $scope.filterName = $scope.filterOptions[filterCategoryIndex].name
 
+    $scope.openMedia = (url) ->
+      $window.open url, "Arise Media"
+      console.log "opening window....", url
 
   init();
