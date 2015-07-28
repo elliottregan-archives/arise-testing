@@ -8,6 +8,9 @@ $(document).ready ->
       expander.toggleClass 'expander-hidden'
     ), 40
 
+  $('.blog-sidebar').click ->
+    console.log "clicky"
+    $(this).toggleClass 'expanded'
 
   menuTimeouts = []
 
