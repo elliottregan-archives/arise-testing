@@ -125,7 +125,12 @@ gulp.task('bower', function() {
   gulp.src([
     'bower_components/jquery/dist/jquery.min.map',
     'bower_components/angular/angular.min.js.map',
+    'bower_components/select2/dist/js/select2.min.js',
     'bower_components/angular-animate/angular-animate.min.js.map',
     ])
     .pipe(gulp.dest(DEST+'/js'));
+  gulp.src([
+    'bower_components/select2/dist/css/select2.min.css',
+    ])
+    .pipe(gulp.dest(DEST+'/styles'));
 });

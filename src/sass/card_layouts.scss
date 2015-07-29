@@ -9,16 +9,20 @@ ul.card_layout {
   }
 }
 
+.speakers {
+  display: block;
+}
+
 .speaker-card {
   @include row;
   margin-bottom: 2rem;
-
+  @include flex(none);
 
   .card-text {
     line-height: $base-line-height;
 
   }
-  
+
   .card-image {
     margin: 0;
 

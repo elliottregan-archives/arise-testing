@@ -33,11 +33,12 @@ body {
 
 .no-scroll {
   overflow: hidden;
+  position: fixed;
 }
 
 .mobile_sidebar {
   position:fixed;
-  z-index: -1;
+  z-index: 0;
   top: 0;
   right: 0;
   margin-left: 25%;
@@ -65,21 +66,42 @@ body {
     li {
       display: block;
       height: auto;
-      line-height: 0;
+      line-height: 1;
       opacity: 1;
+      margin-left: 2rem;
       a {
         color: white;
         padding: 0;
         display: inline-block;
-        margin: 1.2rem 0;
+        margin: .6rem 0;
         font-size: .9em;
       }
     }
 
   }
 
-  li.has_submenu a {
-    color: $brand-yellow;
+  li.has_submenu  {
+
+    margin-left: 0;
+
+    &::before {
+      content: "\25BA";
+      margin-right: 1rem;
+      left: -1rem;
+      color: grey;
+      @include transition(all .5s ease-in-out);
+    }
+
+    &.expanded {
+      a {color: $brand-yellow;}
+
+      &::before {
+        // content: "\25BC";
+        color: $brand-yellow;
+        display: inline-block;
+        @include transform(rotate(.25turn) translateY(4px) translateX(4px));
+      }
+    }
   }
 
   .submenu {
@@ -88,11 +110,30 @@ body {
     position: static;
     padding: .5rem 1rem;
     border: none;
+    overflow: hidden;
+    @include transition(all .5s ease-in-out);
+
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+
+    li {
+      line-height: 1;
+    }
+
+    &.visuallyHidden {
+      display: none;
+    }
+
+    &.visible {
+      display: block;
+      max-height: 1000px;
+      opacity: 1;
+    }
 
     .header_link a {
       color: $brand-yellow;
       font-size: .8em;
-
     }
   }
 
