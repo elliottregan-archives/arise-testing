@@ -1,5 +1,22 @@
 $(document).ready ->
 
+  if $().validate
+    $("#speaker-request-form").validate({
+      rules:
+        fname: "required"
+        email: "email"
+      messages:
+        fname: "Please enter your first name. "
+        email: "Please enter a valid email address so that we can contact you. "
+        phone: "Please share your phone number so we can contact you. "
+      submitHandler: (form) ->
+        console.log "submitting...."
+        # $("#speaker-request-form").ajaxSubmit();
+
+      errorPlacement: (error, element) ->
+        error.insertAfter(element);
+    })
+
   # addContactToList = (formData)->
   #   console.log "clicky", formData
   #   # $("#footer-signup").submit()

@@ -97,6 +97,13 @@ textarea {
   }
 }
 
+.clean_form {
+  @include media($medium-screen-up) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+
 textarea {
   resize: vertical;
 }
@@ -144,14 +151,29 @@ select {
   }
 }
 
+label.error {
+  font-size: .8em;
+  color: salmon;
+  margin-top: -16px;
+  right: 0;
+  margin-bottom: 1rem;
+}
+
 .simple-fieldset {
-  @include span-columns(8);
-  @include shift(2);
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid whitesmoke;
+  padding: 1rem 0 2rem;
+  margin-top: 2rem;
 
   legend {
     font-family: $heading-font-family;
-    color: $brand-grey;
+    font-size: 1.2em;
+    color: lighten($brand-grey, 10%);
     text-transform: uppercase;
+    font-weight: 800;
+    padding: 0;
   }
 }
 
@@ -165,6 +187,15 @@ input.simple-input, textarea.simple-input {
   padding: .5rem .5rem;
   color: $brand-grey;
   display: inline-block;
+
+  &.error {
+    border-color: salmon;
+
+    &:hover, &:focus {
+      border-color: salmon;
+    }
+
+  }
 
   &:hover {
     border: 1px solid lighten(grey, 10%);

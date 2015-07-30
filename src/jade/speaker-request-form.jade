@@ -2,6 +2,8 @@ doctype html
 html
   head
     include _head.jade
+    script(src='http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js')
+    
     //- script(src='js/select2.min.js')
     //- script(src='styles/select2.min.js')
   body
@@ -13,14 +15,14 @@ html
       main
         .content-container
           .content
-            form.clean_form
-              
+            form.clean_form#speaker-request-form
+              h1 Speaker Request Form
               fieldset.simple-fieldset
-                legend Personal:
+                legend Personal
                 .form-row
                   .input-group
                     label.simple-label(for="fname") First Name
-                    input.simple-input(type="text" id="fname" name="fname")
+                    input.simple-input(type="text" id="fname" name="fname" required)
                   .input-group
                     label.simple-label(for="lname") Last Name
                     input.simple-input(type="text" id="lname" name="lname")
@@ -29,7 +31,7 @@ html
                   input.simple-input(type="text" id="title" name="title")
                   
               fieldset.simple-fieldset
-                legend Contact:
+                legend Contact
                 .form-row
                   label.simple-label(for="address") Address
                   input.simple-input(type="text" id="address" name="address")
@@ -50,9 +52,9 @@ html
                     input.simple-input(type="email" id="email" name="email")
                   .input-group
                     label.simple-label(for="phone") Phone
-                    input.simple-input(type="tel" id="phone" name="phone")
+                    input.simple-input(type="tel" id="phone" name="phone" required)
               fieldset.simple-fieldset
-                legend Request Speaker:
+                legend Request Speaker
                 .form-row
                   input.simple-input(type="checkbox" id="pam" name="pam")
                   label.simple-label(for="pam") Pam Kanaly
@@ -62,39 +64,39 @@ html
                   label.simple-label(for="pam2") Pam Kanaly
                 
               fieldset.simple-fieldset
-                legend Event details:
+                legend Event details
                 .form-row
-                  label.simple-label(for="event_name") Event Name:
+                  label.simple-label(for="event_name") Event Name
                   input.simple-input(type="text" id="event_name" name="event_name")
                       
                 .form-row
-                  label.simple-label(for="event_type") Event Type:
+                  label.simple-label(for="event_type") Event Type
                   input.simple-input(type="text" id="event_type" name="event_type")
                   
                 .form-row
                   .input-group
-                    label.simple-label(for="num_sessions") Number of Speaking Sessions:
+                    label.simple-label(for="num_sessions") Number of Speaking Sessions
                     input.simple-input(type="number" id="num_sessions" name="num_sessions")
                   .input-group
-                    label.simple-label(for="attendence") Expected Attendance:
+                    label.simple-label(for="attendence") Expected Attendance
                     input.simple-input(type="number" id="attendence" name="attendence")
                 .form-row
-                  label.simple-label(for="event_date") Event Date:
+                  label.simple-label(for="event_date") Event Date
                   input.simple-input(type="date" id="event_date" name="event_date")
                   
               fieldset.simple-fieldset
-                legend Additional Info:
+                legend Additional Info
                 .form-row
                   label.simple-label(for="heard_about") How did you hear about us?
                   textarea.simple-input( id="heard_about" name="heard_about")
                 .form-row
-                  label.simple-label(for="demographics") Demographics of Audience:
+                  label.simple-label(for="demographics") Demographics of Audience
                   textarea.simple-input( id="demographics" name="demographics")
                 .form-row
-                  label.simple-label(for="additional") Share additional details about the event:
+                  label.simple-label(for="additional") Share additional details about the event
                   textarea.simple-input( id="additional" name="additional")
               fieldset.simple-fieldset.unstyled
                 button.submit-btn Submit
-
+                
       footer
         include _footer.jade
