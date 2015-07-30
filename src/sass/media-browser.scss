@@ -3,7 +3,7 @@
   background-color: white;
   color: $brand-grey;
   font-size: 1rem;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
   @include media( $medium-screen-up ) {
     @include span-columns( 4 );
   }
@@ -100,6 +100,7 @@
   height: 500px;
   position: relative;
   overflow: hidden;
+  border: 1px solid whitesmoke;
   > * {
     position: absolute;
     height: 100%;
@@ -108,7 +109,7 @@
 
 %browser-list-item {
   border-top: 1px solid whitesmoke;
-  border-right: 1px solid whitesmoke;
+  // border-right: 1px solid whitesmoke;
   @include padding(1rem);
   cursor: pointer;
 
@@ -145,21 +146,26 @@
   position: relative;
 }
 
+.filter-list {
+  overflow-y: scroll;
+  border-right: 1px solid whitesmoke;
+  height: 100%;
+}
+
 .filter-column {
   z-index: 10;
   width: 100%;
   overflow: visible;
   background-color: #fff;
-
   @include media($medium-screen) {
     width: 200px;
   }
 
   .filter-item {
     @extend %browser-list-item;
-    padding: .75rem;
+    padding: .5rem;
     font-size: .9em;
-    line-height: 0;
+    // line-height: 0;
     font-weight: 800;
     color: $brand-yellow;
     min-height: 3rem;

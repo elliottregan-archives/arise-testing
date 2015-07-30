@@ -34,9 +34,20 @@ button {
 .submit-btn {
   background-color: $brand-yellow;
   border-radius: 6px;
-  box-shadow: 0 3px darken($brand-yellow, 20%);
+  box-shadow: 0 3px darken($brand-yellow, 15%);
   position: relative;
   padding-left: 55px;
+  font-family: $heading-font-family;
+  font-weight: 800;
+
+  a {
+    color: inherit;
+    font-family: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
 
   &:hover {
     background-color: lighten($brand-yellow, 5%);
@@ -62,6 +73,56 @@ button {
     content: '';
     font-size: 1.8em;
     line-height: 1.4;
+
+    border-radius: 6px 0 0 6px;
+    border-right: 1px solid darken($brand-yellow, 10%);
+    box-shadow: inset -1px 0 transparentize(white, .5)
+  }
+}
+
+.add-to-cart {
+  background-color: $brand-yellow;
+  border-radius: 6px;
+  box-shadow: 0 3px darken($brand-yellow, 15%);
+  position: relative;
+  padding-left: 55px;
+  font-family: $heading-font-family;
+  font-weight: 800;
+
+  a {
+    color: inherit;
+    font-family: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &:hover {
+    background-color: lighten($brand-yellow, 5%);
+    &::before {
+    background-color: lighten($brand-yellow, 5%);
+
+    }
+  }
+
+  &::before {
+    content: '';
+    background-color: $brand-yellow;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "fontello";
+    content: '';
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 1.8;
 
     border-radius: 6px 0 0 6px;
     border-right: 1px solid darken($brand-yellow, 10%);

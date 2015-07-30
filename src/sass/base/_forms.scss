@@ -147,6 +147,12 @@ select {
 .simple-fieldset {
   @include span-columns(8);
   @include shift(2);
+
+  legend {
+    font-family: $heading-font-family;
+    color: $brand-grey;
+    text-transform: uppercase;
+  }
 }
 
 input.simple-input, textarea.simple-input {
@@ -175,7 +181,7 @@ label.simple-label {
   margin-bottom: .5rem;
   padding-bottom: 0;
   font-size: 1em;
-  color: $brand-grey;
+  color: $brand-blue;
   &:after {
     content: '\a';
     white-space: pre;

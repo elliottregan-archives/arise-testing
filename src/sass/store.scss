@@ -24,6 +24,53 @@
   }
 }
 
+.next, .previous {
+  position: relative;
+  font-family: $heading-font-family;
+  padding-right: 40px;
+  cursor: pointer;
+
+  &:hover {
+    color: lighten($brand-blue, 5%);
+
+    &::after {
+      border-color: lighten($brand-blue, 5%);
+    }
+  }
+
+  &::after {
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid $brand-blue;
+    border-radius: 5px;
+    height: 22px;
+    width: 22px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: "fontello";
+    content: '';
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+
+  }
+}
+
+.next {
+  float: right;
+}
+
+.previous {
+  padding-left: 40px;
+  &::after {
+    left: 0;
+    content: '';
+  }
+}
 
 .float_right {
   float: right;

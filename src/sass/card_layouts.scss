@@ -28,6 +28,7 @@ ul.card_layout {
 
     img {
       width: 100%;
+      display: block;
     }
 
     @include media($medium-screen-up) {
@@ -245,5 +246,163 @@ ul.card_layout {
 
     }
 
+  }
+}
+
+.card_layout {
+  margin: 2rem 0;
+  @include clearfix;
+  @include media($medium-screen-up) {
+    @include display(flex);
+  }
+
+  &.horizontal {
+    display: block;
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 4px 8px transparentize(#000, .75);
+  $card-padding: 2rem;
+  margin: 0 0 1rem;
+
+  @include span-columns( 12 );
+
+  @include media($medium-screen-up) {
+    @include span-columns( 4 );
+    @include flex(1);
+
+  }
+
+  &.equal-height {
+    position: relative;
+    padding-bottom: 3rem;
+
+    .read_more {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &.horizontal {
+    @include media($medium-screen-up) {
+      @include flex(none);
+
+      margin: 1rem auto;
+      @include span-columns( 12 );
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+      .card-image {
+        @include span-columns( 4 );
+        height: 150px;
+        width: 200px;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      .card-info {
+        @include span-columns( 8 );
+      }
+
+      .card-title {
+        padding: $card-padding/1.5 $card-padding 0 0;
+
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .card-text {
+        padding-left: 0;
+        line-height: $base-line-height;
+      }
+
+      .read_more {
+        padding: 0 $card-padding 0 $card-padding;
+
+      }
+
+    }
+
+  }
+
+  &.contact {
+    background-color: $brand-blue;
+
+    .card-info {
+      padding-top: 0rem;
+    }
+
+    .card-header {
+      border-bottom: 2px solid tint($brand-blue, 20%);
+      margin: 2rem 2rem 1rem;
+    }
+
+    .card-title {
+      color: white;
+      font-size: 2em;
+    }
+
+    .card-text {
+      color: white;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: $base-line-height;
+    }
+  }
+
+  .card-date {
+    font-size: 1em;
+    float: right;
+    text-transform: Capitalize;
+    white-space: normal;
+    color: $brand-blue
+  }
+
+  .card-title {
+    color: $brand-grey;
+    font-size: 1.4em;
+    line-height: 1.1;
+    padding: $card-padding/1.5 $card-padding 0;
+  }
+
+  .card-text {
+    padding: 0 $card-padding;
+    color: lighten($brand-grey, 20%);
+    font-size: .9em;
+    max-height: 2.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+    line-height: $base-line-height;
+  }
+
+  .card-image {
+    height: 170px;
+    background-color: lighten(black, 10%);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .read_more {
+    color: $brand-yellow;
+    text-align: right;
+    display: block;
+    font-weight: 400;
+    padding: 0 $card-padding $card-padding/1.5;
+
+    &:hover {
+      color: darken($brand-yellow, 10%);
+    }
   }
 }
