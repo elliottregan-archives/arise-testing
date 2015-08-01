@@ -1,3 +1,23 @@
+@include media($medium-screen-up) {
+
+  .media-cards {
+    @include display(flex);
+
+    .media-card {
+      @include flex(1);
+      position: relative;
+      padding-bottom: 4rem;
+
+      .media-card-category {
+        position: absolute;
+        bottom: 1rem;
+        right: 2rem;
+        left: 2rem;
+      }
+    }
+  }
+}
+
 .media-card {
 
   background-color: white;

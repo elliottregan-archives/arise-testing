@@ -95,6 +95,10 @@
 
     }
 
+    &.active {
+      color: darken($brand-grey, 10%);
+    }
+
     &:hover {
       color: darken($brand-grey, 10%);
 

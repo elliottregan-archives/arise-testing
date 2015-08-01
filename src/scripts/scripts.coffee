@@ -1,5 +1,9 @@
 $(document).ready ->
 
+  $(".store-dropdown").click ()->
+    console.log "clicky"
+    $(this).children(".dropdown-options").toggle()
+
   if $().validate
     $("#speaker-request-form").validate({
       rules:
@@ -103,4 +107,5 @@ $(document).ready ->
     e.preventDefault()
     $(this).siblings('.arrow_divider').toggleClass 'to_the_right'
     $('.slideaway_wrapper').toggleClass 'slide_away'
+    $('.mobile_sidebar').toggleClass 'hidden'
     $('body').toggleClass 'no-scroll'

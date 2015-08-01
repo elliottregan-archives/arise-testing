@@ -45,6 +45,11 @@ body {
   height: 100%;
   width: 75%;
   background-color: $brand-grey;
+  @include transition(all .25s ease-in-out);
+
+  &.hidden {
+    opacity: 0;
+  }
 
   @include media( $medium-screen-up ) {
     display: none;
@@ -285,9 +290,116 @@ body {
   padding: 0 1rem;
 }
 
+.store-content {
+  @include outer-container($local-max-width: rem(750));
+}
+
 .text_container {
   @include media($medium-screen-up) {
     @include span-columns( 8 );
     @include shift(2);
+  }
+}
+
+.page-sidebar {
+
+  // display: none;
+  @include position(fixed);
+  z-index: 150;
+  top: -2rem;
+  right: 1rem;
+  border: 3px solid $brand-blue;
+  width: 1.5em;
+  min-height: 1.5em;
+  background-color: white;
+  border-radius: 4px;
+  @include transition(all .4s ease-in-out);
+
+  &::before {
+    display: block;
+    content: '▾';
+    position: absolute;
+    top: -.6rem;
+    left: .15rem;
+    color: $brand-blue;
+    font-size: 1.5rem;
+    vertical-align: top;
+  }
+
+  > * {
+    opacity: 0;
+    height: 0;
+    @include transition(all .2s ease-in-out);
+  }
+
+  @include media( max-width $medium-screen ) {
+
+    &.expanded {
+     width: 40%;
+     max-height: 1000px;
+     padding: 1rem;
+
+      &::before {
+        display: none;
+      }
+
+      > * {
+        display: block;
+        opacity: 1;
+        height: auto;
+      }
+    }
+  }
+
+  @include media( $medium-screen-up ) {
+    @include size(auto);
+    @include span-columns( 3 );
+    @include shift(1);
+    border: none;
+    position: static;
+    font-size: .9em;
+    background-color: lighten($brand-grey, 60%);
+    padding: 1rem;
+    border-radius: 10px;
+
+    > * {
+      display: block;
+      opacity: 1;
+      height: auto;
+    }
+
+    &::before {
+      display: none;
+    }
+
+  }
+
+  h4 {
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    color: lighten(black, 30%);
+    font-weight: 700;
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+
+  a {
+    color: lighten($brand-grey, 40%);
+    padding: .25rem;
+    padding-left: 1rem;
+    font-size: .9em;
+
+    @include ellipsis(100%);
+
+    &:hover {
+      color: $brand-blue;
+    }
+  }
+}
+
+.page_content_with_sidebar {
+  @include media( $medium-screen-up ) {
+    @include span-columns( 8 );
   }
 }

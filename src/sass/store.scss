@@ -5,17 +5,67 @@
   margin-bottom: 2rem;
 
   > * {
-    padding: 1rem 2rem;
+    padding: .5rem 2rem;
     color: white;
     font-weight: 800;
     text-transform: uppercase;
     font-size: .9em;
     display: inline-block;
+    font-size: .75rem;
+    letter-spacing: .1em;
   }
 
-  .dropdown {
-    background-color: lighten($brand-grey, 20%);
+  .store-dropdown {
+    background-color: lighten($brand-grey, 40%);
     float: left;
+    cursor: pointer;
+    $expander-toggle-size: 1em;
+    position: relative;
+
+    .dropdown-options {
+      display: none;
+      background-color: lighten($brand-grey, 60%);
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+
+      li {
+        padding: .75rem 2rem;
+        color: lighten($brand-grey, 40%);
+        font-weight: 800;
+        text-transform: none;
+
+        a {
+          color: inherit;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+
+        &:hover {
+          background-color: lighten($brand-grey, 45%);
+          color: white;
+        }
+      }
+    }
+
+    .dropdown-label {
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: lighten($brand-grey, 45%);
+
+    }
+
+    &::before {
+      font-size: .8rem;
+      display: inline-block;
+      content: "\25BC";
+      margin-right: 0.5em;
+    }
   }
 
   .cart-btn {
@@ -126,6 +176,7 @@
     @include media($medium-screen-up) {
       @include span-columns(4);
       @include omega(2n+1);
+      min-height: 200px;
     }
 
     @include padding(1rem);
@@ -148,14 +199,20 @@
     }
 
     .item-title {
-      font-size: 1.3em;
+      font-size: 1.1em;
+      color: lighten(black, 30%);
       margin: .5rem 0;
+
+      height: 54px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .item-price {
-      font-size: 1.5em;
-      font-weight: 400;
+      font-size: 1.4em;
+      font-weight: 300;
       color: grey;
+      margin: .5rem 0;
     }
   }
 

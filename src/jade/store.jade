@@ -12,9 +12,16 @@ html
         include _header.jade
       main
         .content-container
-          .content
+          .content.store-content
+            h1 Store
+            p.intro-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.
             header.store-header
-              .dropdown category
+              .store-dropdown 
+                span.current_category category
+                ul.dropdown-options
+                  li: a(href="#") category 1
+                  li category 2
+                  li category 3
               .cart-btn Cart (0)
             h2 Seagals 
             ul.store-list
@@ -30,7 +37,7 @@ html
                 button.add-to-cart Add to Cart
               li.store-list-item
                 a(href="#"): img.item-thumbnail(src="http://stevensegallery.com/300/300")
-                h3.item-title Item title
+                h3.item-title Item title title title all the way to 3 lines of text for real this time
                 .item-price $12.00
                 button.add-to-cart Add to Cart
               li.store-list-item
